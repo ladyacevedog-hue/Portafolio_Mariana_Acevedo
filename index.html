@@ -1,0 +1,2093 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leidy Mariana Acevedo García — Analista Senior de Datos & Negocios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0F1E2E;
+    --ink-soft:#42566B;
+    --paper:#F4F6F3;
+    --card:#FFFFFF;
+    --line:#DCE2DC;
+    --line-strong:#C3CCC4;
+    --accent:#0E7C66;
+    --accent-deep:#0A5A4A;
+    --signal:#D6920E;
+    --display:'Space Grotesk',system-ui,sans-serif;
+    --body:'Inter',system-ui,sans-serif;
+    --mono:'IBM Plex Mono',ui-monospace,monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:var(--body);
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{background:var(--accent);color:#fff;}
+  a{color:inherit;text-decoration:none;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+
+  .mono{font-family:var(--mono);}
+  .eyebrow{
+    font-family:var(--mono);
+    font-size:.72rem;
+    letter-spacing:.18em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:inline-block;
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;top:0;z-index:50;
+    background:rgba(244,246,243,.86);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .brand{font-family:var(--display);font-weight:700;font-size:1rem;letter-spacing:-.01em;}
+  .brand span{color:var(--accent);}
+  .nav-links{display:flex;gap:26px;}
+  .nav-links a{
+    font-family:var(--mono);font-size:.78rem;letter-spacing:.04em;color:var(--ink-soft);
+    transition:color .2s;
+  }
+  .nav-links a:hover{color:var(--accent);}
+  @media(max-width:720px){.nav-links{display:none;}}
+
+  /* ---------- HERO ---------- */
+  .hero{padding:88px 0 64px;border-bottom:1px solid var(--line);position:relative;overflow:hidden;}
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background-image:linear-gradient(var(--line) 1px,transparent 1px);
+    background-size:100% 34px;opacity:.5;mask-image:linear-gradient(180deg,transparent,#000 40%,transparent);
+    pointer-events:none;
+  }
+  .hero-grid{position:relative;display:grid;grid-template-columns:1fr;gap:30px;}
+  .hero h1{
+    font-family:var(--display);font-weight:700;
+    font-size:clamp(2.5rem,7vw,4.6rem);line-height:1.02;letter-spacing:-.03em;
+    margin:18px 0 0;
+  }
+  .hero h1 .ln2{color:var(--ink-soft);}
+  .hero .thesis{
+    font-size:clamp(1.05rem,2.4vw,1.35rem);
+    max-width:46ch;color:var(--ink-soft);margin-top:26px;font-weight:400;
+  }
+  .hero .thesis b{color:var(--ink);font-weight:600;}
+  .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;}
+  .chip{
+    font-family:var(--mono);font-size:.76rem;
+    border:1px solid var(--line-strong);border-radius:999px;
+    padding:7px 14px;color:var(--ink-soft);background:var(--card);
+    transition:border-color .2s,color .2s;
+  }
+  .chip:hover{border-color:var(--accent);color:var(--accent);}
+  .chip.live{border-color:var(--accent);color:var(--accent);}
+  .chip.live::before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--accent);margin-right:7px;vertical-align:middle;}
+
+  .ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:26px;}
+  .cta{
+    font-family:var(--mono);font-size:.82rem;letter-spacing:.02em;
+    padding:13px 24px;border-radius:8px;border:1px solid var(--ink);
+    color:var(--ink);background:var(--card);
+    transition:transform .15s ease,box-shadow .2s ease,background .2s;
+    display:inline-block;
+  }
+  .cta:hover{transform:translateY(-2px);box-shadow:0 8px 20px -10px rgba(15,30,46,.5);}
+  .cta.primary{background:var(--ink);color:#fff;border-color:var(--ink);}
+  .cta.primary:hover{background:var(--accent-deep);border-color:var(--accent-deep);}
+  .cta:focus-visible{outline:2px solid var(--accent);outline-offset:3px;}
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:72px 0;border-bottom:1px solid var(--line);}
+  .sec-head{display:flex;align-items:baseline;gap:16px;margin-bottom:40px;}
+  .sec-idx{font-family:var(--mono);font-size:.8rem;color:var(--accent);letter-spacing:.05em;padding-top:4px;}
+  .sec-head h2{font-family:var(--display);font-weight:600;font-size:clamp(1.6rem,4vw,2.3rem);letter-spacing:-.02em;}
+
+  /* ---------- PERFIL ---------- */
+  .perfil-body{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start;}
+  .perfil-body p{font-size:1.05rem;color:var(--ink-soft);}
+  .perfil-body p+p{margin-top:16px;}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;}
+  .stat{background:var(--card);padding:22px 20px;}
+  .stat .n{font-family:var(--display);font-weight:700;font-size:1.9rem;color:var(--ink);letter-spacing:-.02em;}
+  .stat .n em{color:var(--accent);font-style:normal;}
+  .stat .l{font-family:var(--mono);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;}
+  @media(max-width:760px){.perfil-body{grid-template-columns:1fr;gap:34px;}}
+
+  /* ---------- EXPERIENCIA ---------- */
+  .xp{display:grid;grid-template-columns:auto 1fr;gap:0 30px;}
+  .xp-row{display:contents;}
+  .xp-when{
+    font-family:var(--mono);font-size:.82rem;color:var(--accent);
+    padding:0 0 38px;white-space:nowrap;
+  }
+  .xp-main{
+    padding:0 0 38px 30px;border-left:1px solid var(--line);position:relative;
+  }
+  .xp-main::before{
+    content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;
+    background:var(--accent);box-shadow:0 0 0 4px var(--paper);
+  }
+  .xp-row:last-child .xp-main{padding-bottom:0;}
+  .xp-role{font-family:var(--display);font-weight:600;font-size:1.18rem;letter-spacing:-.01em;}
+  .xp-org{font-family:var(--mono);font-size:.82rem;color:var(--ink-soft);margin:3px 0 12px;}
+  .xp-main ul{list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .xp-main li{position:relative;padding-left:18px;color:var(--ink-soft);font-size:.97rem;}
+  .xp-main li::before{content:"—";position:absolute;left:0;color:var(--accent);}
+  @media(max-width:640px){
+    .xp{grid-template-columns:1fr;}
+    .xp-when{padding-bottom:8px;}
+    .xp-main{padding-left:24px;}
+  }
+
+  /* ---------- ESPECIALIZACIÓN ---------- */
+  .esp-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;}
+  .esp-grid h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:16px;}
+  .tags{display:flex;flex-wrap:wrap;gap:9px;}
+  .tag{
+    font-size:.86rem;background:var(--card);border:1px solid var(--line);
+    border-radius:8px;padding:7px 12px;color:var(--ink);
+  }
+  .tag.key{border-color:var(--accent);color:var(--accent-deep);background:#0E7C660d;}
+  @media(max-width:680px){.esp-grid{grid-template-columns:1fr;gap:30px;}}
+
+  /* ---------- CERTIFICACIONES ---------- */
+  .cert-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-bottom:24px;}
+  .cert-count{font-family:var(--mono);font-size:.8rem;color:var(--ink-soft);}
+  .cert-count b{color:var(--accent);}
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:30px;}
+  .filter{
+    font-family:var(--mono);font-size:.76rem;letter-spacing:.02em;
+    border:1px solid var(--line-strong);background:var(--card);border-radius:999px;
+    padding:7px 14px;cursor:pointer;color:var(--ink-soft);
+    transition:all .18s;
+  }
+  .filter:hover{border-color:var(--accent);color:var(--accent);}
+  .filter[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff;}
+  .filter:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+
+  .cert-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .cert{
+    background:var(--card);border:1px solid var(--line);border-radius:12px;
+    padding:20px 20px 18px;position:relative;
+    transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease;
+  }
+  .cert::before{
+    content:"";position:absolute;left:0;top:18px;bottom:18px;width:3px;border-radius:3px;
+    background:var(--accent);opacity:0;transition:opacity .2s;
+  }
+  .cert:hover{transform:translateY(-3px);border-color:var(--line-strong);box-shadow:0 10px 28px -16px rgba(15,30,46,.4);}
+  .cert:hover::before{opacity:1;}
+  .cert-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:12px;}
+  .cert-cat{font-family:var(--mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);}
+  .cert-yr{font-family:var(--mono);font-size:.78rem;color:var(--ink-soft);}
+  .cert-name{font-family:var(--display);font-weight:600;font-size:1.04rem;line-height:1.25;letter-spacing:-.01em;}
+  .cert-meta{font-family:var(--mono);font-size:.76rem;color:var(--ink-soft);margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 10px;}
+  .cert-meta .h{color:var(--signal);}
+  @media(max-width:640px){.cert-grid{grid-template-columns:1fr;}}
+
+  /* ---------- PROYECTOS ---------- */
+  .proj{
+    background:var(--card);border:1px solid var(--line);border-radius:16px;
+    padding:30px;overflow:hidden;
+  }
+  .proj-head{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;flex-wrap:wrap;margin-bottom:8px;}
+  .proj-title{font-family:var(--display);font-weight:700;font-size:1.5rem;letter-spacing:-.02em;}
+  .proj-tool{
+    font-family:var(--mono);font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;
+    background:var(--ink);color:#fff;border-radius:999px;padding:6px 13px;white-space:nowrap;
+  }
+  .proj-sub{font-family:var(--mono);font-size:.8rem;color:var(--ink-soft);margin-bottom:20px;}
+  .proj p.lead{color:var(--ink-soft);max-width:70ch;}
+  .conf{
+    display:flex;align-items:center;gap:10px;
+    background:#D6920E14;border:1px solid #D6920E44;border-radius:10px;
+    padding:12px 14px;margin:22px 0;
+    font-family:var(--mono);font-size:.76rem;color:#8a5f06;line-height:1.5;
+  }
+  .conf::before{content:"◆";color:var(--signal);}
+  .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:26px;}
+  .kpi{background:var(--paper);padding:18px 16px;}
+  .kpi .v{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--line-strong);letter-spacing:.06em;}
+  .kpi .l{font-family:var(--mono);font-size:.66rem;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-soft);margin-top:6px;}
+  @media(max-width:680px){.kpis{grid-template-columns:1fr 1fr;}}
+
+  .proj-cols{display:grid;grid-template-columns:1fr 1fr;gap:34px;margin-top:6px;}
+  .proj-cols h4{font-family:var(--mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px;}
+  .pages{display:flex;flex-direction:column;gap:9px;}
+  .page{display:flex;gap:12px;align-items:baseline;font-size:.93rem;color:var(--ink-soft);}
+  .page b{font-family:var(--display);font-weight:600;color:var(--ink);font-size:.95rem;min-width:auto;}
+  .page .dot{color:var(--accent);font-family:var(--mono);font-size:.7rem;}
+  @media(max-width:680px){.proj-cols{grid-template-columns:1fr;gap:26px;}.proj{padding:22px;}}
+
+  /* ---------- DASHBOARD DEMO ---------- */
+  .dash{
+    margin-top:26px;border:1px solid var(--line);border-radius:14px;overflow:hidden;background:#FBFCFB;
+  }
+  .dash-bar{
+    display:flex;align-items:center;gap:10px;
+    background:#1A1113;padding:11px 16px;color:#fff;
+  }
+  .dash-bar .dot{width:9px;height:9px;border-radius:50%;background:#C0392B;}
+  .dash-bar .nm{font-family:var(--mono);font-size:.76rem;letter-spacing:.04em;}
+  .dash-bar .sim{
+    margin-left:auto;font-family:var(--mono);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;
+    background:#D6920E;color:#1A1113;border-radius:4px;padding:3px 8px;font-weight:600;
+  }
+  .dash-tabs{display:flex;overflow-x:auto;border-bottom:1px solid var(--line);background:#fff;scrollbar-width:thin;}
+  .dtab{
+    flex:0 0 auto;border:0;background:none;cursor:pointer;
+    font-family:var(--mono);font-size:.74rem;color:var(--ink-soft);
+    padding:13px 16px;border-bottom:2px solid transparent;white-space:nowrap;
+  }
+  .dtab:hover{color:var(--ink);}
+  .dtab[aria-selected="true"]{color:var(--a,#9B2C2C);border-bottom-color:var(--a,#9B2C2C);font-weight:600;}
+  .dtab:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;}
+  .dash-body{padding:22px;min-height:340px;}
+  .dash-q{
+    font-family:var(--mono);font-size:.72rem;color:var(--ink-soft);
+    border-left:2px solid #9B2C2C;padding-left:10px;margin-bottom:20px;
+  }
+  .dash-q b{color:var(--ink);}
+  .viz{background:#fff;border:1px solid var(--line);border-radius:10px;padding:16px 18px;}
+  .viz h5{font-family:var(--display);font-weight:600;font-size:.95rem;margin-bottom:2px;}
+  .viz .cap{font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);margin-bottom:14px;}
+  .vgrid{display:grid;gap:14px;}
+  .vgrid.c2{grid-template-columns:1fr 1fr;}
+  .vgrid.c4{grid-template-columns:repeat(4,1fr);}
+  @media(max-width:760px){.vgrid.c2,.vgrid.c4{grid-template-columns:1fr;}}
+  .card-kpi{background:#fff;border:1px solid var(--line);border-radius:10px;padding:14px 16px;text-align:center;}
+  .card-kpi .l{font-family:var(--mono);font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);}
+  .card-kpi .v{font-family:var(--display);font-weight:700;font-size:1.6rem;color:#9B2C2C;margin-top:4px;letter-spacing:-.02em;}
+  .card-kpi .v.alt{color:var(--ink);}
+  /* horizontal bars */
+  .hbars{display:flex;flex-direction:column;gap:7px;}
+  .hbar{display:grid;grid-template-columns:92px 1fr auto;gap:9px;align-items:center;font-size:.78rem;}
+  .hbar .k{font-family:var(--mono);font-size:.7rem;color:var(--ink-soft);text-align:right;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+  .hbar .track{background:#F0EDEE;border-radius:3px;height:15px;overflow:hidden;}
+  .hbar .fill{height:100%;border-radius:3px;background:#9B2C2C;}
+  .hbar .n{font-family:var(--mono);font-size:.68rem;color:var(--ink-soft);white-space:nowrap;}
+  svg.chart{width:100%;height:auto;display:block;overflow:visible;}
+  .legend{display:flex;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:.66rem;color:var(--ink-soft);margin-top:10px;}
+  .legend i{display:inline-block;width:9px;height:9px;border-radius:2px;margin-right:5px;}
+  .dnote{font-family:var(--mono);font-size:.68rem;color:var(--ink-soft);padding:12px 22px 20px;}
+
+  /* ---------- EDUCACIÓN ---------- */
+  .edu{display:grid;gap:14px;}
+  .edu-item{display:flex;justify-content:space-between;gap:16px;align-items:baseline;padding:18px 0;border-bottom:1px dashed var(--line-strong);}
+  .edu-item:last-child{border-bottom:none;}
+  .edu-deg{font-family:var(--display);font-weight:600;font-size:1.1rem;}
+  .edu-inst{font-size:.95rem;color:var(--ink-soft);margin-top:2px;}
+  .edu-yr{font-family:var(--mono);font-size:.82rem;color:var(--accent);white-space:nowrap;}
+
+  /* ---------- CONTACTO ---------- */
+  .contacto{background:var(--ink);color:#fff;border-bottom:none;}
+  .contacto .eyebrow{color:#5fd3bd;}
+  .contacto h2{color:#fff;}
+  .ct-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;}
+  .ct-lead{font-family:var(--display);font-weight:500;font-size:clamp(1.4rem,3.4vw,2rem);line-height:1.2;letter-spacing:-.02em;}
+  .ct-list{display:grid;gap:14px;}
+  .ct-item{display:flex;flex-direction:column;gap:2px;}
+  .ct-item .k{font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:#7d93a6;}
+  .ct-item .v{font-size:1.02rem;}
+  .ct-item a.v:hover{color:#5fd3bd;}
+  .ct-foot{margin-top:48px;padding-top:24px;border-top:1px solid #25394c;font-family:var(--mono);font-size:.72rem;color:#7d93a6;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px;}
+  @media(max-width:680px){.ct-grid{grid-template-columns:1fr;gap:30px;align-items:start;}}
+
+  /* reveal */
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease;}
+  .reveal.in{opacity:1;transform:none;}
+  @media(prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto;}
+    .reveal{opacity:1;transform:none;transition:none;}
+    .cert,.chip,.filter{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">LMAG<span>.</span></div>
+    <nav class="nav-links">
+      <a href="#perfil">Perfil</a>
+      <a href="#experiencia">Experiencia</a>
+      <a href="#especializacion">Especialización</a>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#certificaciones">Certificaciones</a>
+      <a href="#contacto">Contacto</a>
+      <a href="en.html" style="color:var(--accent);font-weight:600">EN</a>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Analista Senior · Datos &amp; Negocios · LATAM</span>
+      <h1>Leidy Mariana<br><span class="ln2">Acevedo García</span></h1>
+      <p class="thesis">Uno <b>mejora de procesos</b>, <b>análisis de negocio</b> y <b>analítica de datos</b> para convertir operaciones complejas de banca y fintech en decisiones claras.</p>
+      <div class="chips">
+        <span class="chip live">Disponibilidad inmediata</span>
+        <span class="chip">+10 años de experiencia</span>
+        <span class="chip">Inglés avanzado</span>
+        <span class="chip">Costa Rica</span>
+      </div>
+      <div class="ctas">
+        <a class="cta primary" href="CV_Leidy_Mariana_Acevedo_Garcia.pdf" download>Descargar CV</a>
+        <a class="cta" href="https://cr.linkedin.com/in/marianaacevedo93" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PERFIL -->
+<section id="perfil">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">01</span><h2>Perfil profesional</h2></div>
+    <div class="perfil-body">
+      <div class="reveal">
+        <p>Analista Senior de Negocios y Datos con más de 10 años conectando <b style="color:#0F1E2E">estrategia, mejora de procesos y analítica avanzada</b> en entornos de banca y fintech a lo largo de LATAM.</p>
+        <p>Mi perfil es integral por diseño. Por un lado, la <b style="color:#0F1E2E">mejora de procesos</b>: actualmente curso Lean Six Sigma Green Belt, con foco en optimización operativa, reducción de desperdicio y rediseño de flujos AS-IS / TO-BE. Por otro, el <b style="color:#0F1E2E">análisis de negocio</b>: me estoy certificando en business analysis para formalizar la disciplina de levantamiento de requerimientos, modelado de procesos y traducción entre negocio y tecnología.</p>
+        <p>Sobre esa base se apoya mi expertise técnica en <b style="color:#0F1E2E">análisis de datos</b>: SQL, Power BI, Tableau, Alteryx, R y Python. No son herramientas sueltas — son el instrumental con el que convierto necesidades de negocio complejas en soluciones escalables que mejoran la eficiencia operativa, reducen la exposición al fraude y elevan el desempeño de los productos.</p>
+        <p>Tengo amplia experiencia con redes de pago globales, liderando iniciativas regionales multifuncionales, gobernando el ámbito de datos de un producto propio del banco e influyendo en la toma de decisiones ejecutiva a través de analítica y storytelling. Combino pensamiento estratégico, capacidad analítica y liderazgo en entornos multiculturales y remotos.</p>
+      </div>
+      <div class="stats reveal">
+        <div class="stat"><div class="n"><em>+10</em></div><div class="l">Años de experiencia</div></div>
+        <div class="stat"><div class="n"><em>5+</em></div><div class="l">Países en Centroamérica</div></div>
+        <div class="stat"><div class="n"><em>18</em></div><div class="l">Certificaciones</div></div>
+        <div class="stat"><div class="n">Millones</div><div class="l">De registros analizados/mes</div></div>
+        <div class="stat"><div class="n"><em>8</em></div><div class="l">Dashboards en producción</div></div>
+        <div class="stat" style="grid-column:1 / -1"><div class="n"><em>1</em> producto</div><div class="l">Bajo mi responsabilidad de datos</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCIA -->
+<section id="experiencia">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">02</span><h2>Experiencia</h2></div>
+    <div class="xp reveal">
+      <div class="xp-row">
+        <div class="xp-when">2023 — Presente</div>
+        <div class="xp-main">
+          <div class="xp-role">Data Specialist</div>
+          <div class="xp-org">BAC LATAM</div>
+          <ul>
+            <li>Enlace estratégico entre los equipos de negocio, analítica y tecnología en más de 5 países de Centroamérica.</li>
+            <li>Lidero iniciativas regionales de analítica que mejoran la visibilidad del desempeño de productos y operaciones.</li>
+            <li>Diseño tableros ejecutivos en Power BI y Tableau para monitorear KPIs y métricas estratégicas en tiempo real.</li>
+            <li>Analizo grandes volúmenes de datos transaccionales para identificar oportunidades de crecimiento y reducción de costos.</li>
+            <li>Mejoré la eficiencia de procesos entre 20 % y 25 % mediante automatización y optimización basadas en datos.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-when">2018 — 2023</div>
+        <div class="xp-main">
+          <div class="xp-role">Prevención de Fraude &amp; Gestión de Contracargos</div>
+          <div class="xp-org">BAC LATAM</div>
+          <ul>
+            <li>Lideré analítica regional de fraude y gestión de disputas con impacto en múltiples países y portafolios.</li>
+            <li>Analicé tendencias y causas raíz de fraude, contribuyendo a la reducción interanual de pérdidas.</li>
+            <li>Definí requerimientos de negocio y funcionales para herramientas de automatización, tableros y soluciones con IA.</li>
+            <li>Actué como Project Manager / Product Owner de iniciativas regionales de analítica.</li>
+            <li>Colaboré directamente con VISA, Mastercard y AMEX para alinear KPIs y estándares de desempeño.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="xp-row">
+        <div class="xp-when">2016 — 2018</div>
+        <div class="xp-main">
+          <div class="xp-role">Ejecutiva de Adquirencia</div>
+          <div class="xp-org">BAC Credomatic</div>
+          <ul>
+            <li>Analicé operaciones de adquirencia de comercios y el desempeño del portafolio.</li>
+            <li>Optimicé flujos de trabajo operativos mediante iniciativas de mejora de procesos.</li>
+            <li>Coordiné con equipos internos el cumplimiento de requisitos regulatorios y de negocio.</li>
+            <li>Apoyé reportería, monitoreo de portafolio y seguimiento de desempeño de cuentas de comercios.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ESPECIALIZACIÓN -->
+<section id="especializacion">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">03</span><h2>Áreas de especialización</h2></div>
+    <div class="esp-grid">
+      <div class="reveal">
+        <h3>Mejora de procesos &amp; análisis de negocio</h3>
+        <div class="tags">
+          <span class="tag key">Lean Six Sigma (Green Belt)</span>
+          <span class="tag key">Optimización de procesos (AS-IS / TO-BE)</span>
+          <span class="tag key">Levantamiento de requerimientos</span>
+          <span class="tag">Modelado de procesos</span>
+          <span class="tag">Documentación funcional</span>
+          <span class="tag">Diseño de KPIs</span>
+          <span class="tag">Agile / Scrum</span>
+          <span class="tag">Gestión de stakeholders</span>
+        </div>
+        <h3 style="margin-top:26px">Dominio de negocio</h3>
+        <div class="tags">
+          <span class="tag key">Prevención de fraude</span>
+          <span class="tag key">Segmentación &amp; buyer persona</span>
+          <span class="tag key">Retención &amp; ciclo de vida del cliente</span>
+          <span class="tag">Pagos &amp; adquirencia</span>
+          <span class="tag">Contracargos</span>
+          <span class="tag">Gobierno de datos de producto</span>
+          <span class="tag">Benchmark competitivo</span>
+          <span class="tag">Operaciones multipaís</span>
+        </div>
+      </div>
+      <div class="reveal">
+        <h3>Herramientas de análisis de datos</h3>
+        <div class="tags">
+          <span class="tag key">SQL</span>
+          <span class="tag key">Power BI</span>
+          <span class="tag key">Tableau</span>
+          <span class="tag key">Alteryx</span>
+          <span class="tag key">Python</span>
+          <span class="tag key">R</span>
+          <span class="tag">DAX</span>
+          <span class="tag">Excel avanzado</span>
+          <span class="tag">Modelado de datos</span>
+          <span class="tag">Visualización de datos</span>
+          <span class="tag">Automatización de procesos</span>
+          <span class="tag">Calidad de datos</span>
+        </div>
+        <h3 style="margin-top:26px">Formación en curso</h3>
+        <div class="tags">
+          <span class="tag key">Lean Six Sigma Green Belt</span>
+          <span class="tag key">Business Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROYECTOS -->
+<section id="proyectos">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">04</span><h2>Proyectos de analítica</h2></div>
+
+    <article class="proj reveal">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">GaminG — Dashboard del segmento Gamer</div>
+          <div class="proj-sub">Analítica de consumo en tarjetas · 6 países de Centroamérica · Enero 2025 – Abril 2026</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Diseñé y construí un dashboard de 9 páginas para dar visibilidad estratégica al comportamiento de consumo del nicho Gamer: facturación, ticket promedio, crecimiento mensual y desempeño interanual (YoY). El panel permite identificar tendencias, patrones y oportunidades comerciales para dirigir campañas personalizadas hacia un segmento de alto potencial.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel que se muestra abajo es una recreación con datos simulados: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Información general</b> — facturación por género, generación, país y segmento.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Planes de lealtad</b> — ranking de facturación por plan y distribución de cuentas.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Ticket promedio</b> — por segmento, género, tipo de uso y evolución mensual.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Comportamiento financiero</b> — facturación mensual, totalero vs. revolvente y clientes por segmento.</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Información demográfica</b> — distribución etaria, cohortes generacionales y red de marca.</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Análisis gaming</b> — plataforma líder, crédito vs. débito y top de marcas del catálogo.</span></div>
+            <div class="page"><span class="dot">07</span><span><b>Crecimiento YoY</b> — variación interanual de la facturación mes a mes.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Modelo de datos y medidas DAX para calcular ticket promedio, YoY y participación por plataforma.</span></div>
+            <div class="page"><span class="dot">—</span><span>Clasificación de comercios en más de 70 marcas gaming a partir de datos transaccionales sin categorizar.</span></div>
+            <div class="page"><span class="dot">—</span><span>Filtros transversales (periodo, país, marca de red, tipo de uso) para autoservicio del área comercial.</span></div>
+            <div class="page"><span class="dot">—</span><span>Narrativa ejecutiva: cada página responde una pregunta de negocio concreta, no solo muestra gráficos.</span></div>
+            <div class="page"><span class="dot">—</span><span>Insumo para segmentación de campañas dirigidas al nicho gamer.</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot"></span>
+          <span class="nm">GaminG — Panel de segmento</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs1"></div>
+        <div class="dash-body" id="dbody1"></div>
+        <p class="dnote">Recreación del panel original con datos ficticios. Diseño, métricas y lógica de negocio son los del proyecto real; las cifras no lo son.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">Precisión Operativa de Aerolíneas</div>
+          <div class="proj-sub">Calidad de datos en programas de millas · 6 países · Regional</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Dashboard de calidad operativa que clasifica los errores de acreditación de millas por país, aerolínea y categoría de error, y cuantifica su impacto en cuentas canceladas, colocación y facturación. Permite identificar los focos de afectación, priorizar correcciones y comparar el desempeño entre regiones y operadores.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Reporte ejecutivo</b> — millas y cuentas con error por país, con antigüedad del error.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Status especiales</b> — control de millas en status A e índice de millas abandonadas.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Aerolíneas</b> — distribución de millas y cuentas por país y operador; impacto relativo.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Segmentación</b> — errores por segmento de cliente (masivo, pymes, premium, banca privada).</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Lista de errores</b> — catálogo de códigos con millas y cuentas afectadas por cada uno.</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Comportamiento histórico</b> — tendencia mensual de millas confirmadas y pendientes de corrección.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Consolidé archivos de error de 3 programas de millas distintos en un solo modelo comparable.</span></div>
+            <div class="page"><span class="dot">—</span><span>Clasifiqué más de 30 códigos de error en categorías accionables (datos del cliente, saldo, proceso, sistema).</span></div>
+            <div class="page"><span class="dot">—</span><span>Creé una matriz de antigüedad del error (mes actual → 1 año+) para priorizar lo que lleva más tiempo sin resolverse.</span></div>
+            <div class="page"><span class="dot">—</span><span>Cuantifiqué el impacto: millas abandonadas y cuentas pendientes de confirmación, no solo el conteo de errores.</span></div>
+            <div class="page"><span class="dot">—</span><span>Convertí un proceso de revisión manual en un tablero de monitoreo con filtros por país y aerolínea.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#2563A8"></span>
+          <span class="nm">Precisión operativa — Programas de millas</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs2"></div>
+        <div class="dash-body" id="dbody2"></div>
+        <p class="dnote">Nombres de países, aerolíneas y segmentos reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">Buyer Persona — Plataforma de Redención de Puntos</div>
+          <div class="proj-sub">Perfil de cliente en industria turística · Persona física y jurídica · 6 países</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Dashboard de 25 páginas que construye el perfil del cliente que compra en la plataforma de redención de puntos de lealtad (aerolíneas, hoteles, agencias de viaje y renta de autos). Responde quién compra, qué prefiere, cuánto gasta y con qué programa de lealtad — separando persona física de persona jurídica, para orientar la estrategia comercial y el diseño de campañas.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Perfil demográfico</b> — clientes por género, generación y segmento.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Facturación</b> — por segmento, uso, clase de tarjeta y curva etaria de compra.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Vinculación</b> — marca propia vs. co-branding, y comportamiento crédito/débito.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Programas de lealtad</b> — ranking de programas, revolvente vs. totalero, clase de tarjeta.</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Ticket promedio</b> — por clase, generación, género, uso, marca e industria.</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Industrias</b> — mix de aerolíneas, hoteles, agencias y rent-a-car por país y generación.</span></div>
+            <div class="page"><span class="dot">07</span><span><b>Top de comercios</b> — ranking de comercios más comprados en la plataforma.</span></div>
+            <div class="page"><span class="dot">08</span><span><b>Persona jurídica</b> — mismo análisis para el cliente empresarial.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Definí el buyer persona del canal de redención: quién compra, qué industria prefiere y cuánto gasta por generación.</span></div>
+            <div class="page"><span class="dot">—</span><span>Separé el análisis de persona física y jurídica, que tienen patrones de compra y ticket muy distintos.</span></div>
+            <div class="page"><span class="dot">—</span><span>Crucé programa de lealtad × clase de tarjeta × industria para detectar qué combinación genera más redención.</span></div>
+            <div class="page"><span class="dot">—</span><span>Modelé cohortes generacionales (Z, Millennial, X, Boomer, Silenciosa) sobre una base de más de un millón de clientes.</span></div>
+            <div class="page"><span class="dot">—</span><span>Entregué el insumo para segmentar campañas y priorizar alianzas con comercios del vertical turístico.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#12897B"></span>
+          <span class="nm">Buyer persona — Plataforma de viajes</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs3"></div>
+        <div class="dash-body" id="dbody3"></div>
+        <p class="dnote">Nombres de países, marcas, programas y comercios reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">Informe Gerencial — Producto de Viajes</div>
+          <div class="proj-sub">Metas, market share y cumplimiento · 6 países · Serie histórica 2017–2026</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Informe gerencial de 18 páginas para el seguimiento del producto: facturación contra meta, market share, tasa de cierre, embudo de tráfico y desempeño por país, producto y forma de pago. Es la herramienta de decisión de la dirección — no describe lo que pasó, señala dónde se está incumpliendo y por qué.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Indicadores</b> — meta, cumplimiento, crecimiento, market share y tráfico web.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Resumen por producto</b> — facturación, reservas y ticket promedio de cada línea.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Facturación anual</b> — serie histórica y crecimiento interanual desde 2017.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Metas</b> — resultados vs. objetivo por línea de producto y por país.</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Formas de pago</b> — mix de redención, tasa cero, cuotas y pago mixto por país.</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Transaccionalidad</b> — ventas y transacciones mensuales por mercado.</span></div>
+            <div class="page"><span class="dot">07</span><span><b>Destinos</b> — ranking de destinos finales y ciudades de salida.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Diseñé el marco de KPIs del producto: meta, cumplimiento, market share, tasa de cierre y crecimiento YoY.</span></div>
+            <div class="page"><span class="dot">—</span><span>Conecté tráfico web (sesiones) con transacciones para calcular la tasa de cierre, revelando el cuello de botella real del embudo.</span></div>
+            <div class="page"><span class="dot">—</span><span>Construí una serie histórica de 10 años que expone el efecto de la pandemia y la recuperación posterior.</span></div>
+            <div class="page"><span class="dot">—</span><span>Descompuse la facturación por forma de pago para cuantificar cuánto se financia con redención de puntos vs. cargo directo.</span></div>
+            <div class="page"><span class="dot">—</span><span>Convertí un reporte gerencial estático en un tablero con filtros por país y periodo, usado en comité.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#1E7A8C"></span>
+          <span class="nm">Informe gerencial — Producto de viajes</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs4"></div>
+        <div class="dash-body" id="dbody4"></div>
+        <p class="dnote">Países, productos, aerolíneas y destinos reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">Colocación Empresarial — Programa de Millas</div>
+          <div class="proj-sub">Metas de colocación, facturación asociada y control de errores · 6 países</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Dashboard de monitoreo del programa de millas corporativo: seguimiento del cumplimiento de metas de colocación por país, la facturación asociada a esas cuentas, la compra de millas y la validación de errores e inconsistencias en las cuentas empresariales. Une, en un solo tablero, la meta comercial y la calidad del dato que la sostiene.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Colocación por país</b> — cuentas entregadas, entregadas sin activar y pendientes de entrega.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Colocación por periodo</b> — evolución mensual de cada estado de cuenta.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Metas</b> — colocación lograda vs. meta anual, con % de cumplimiento por país.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Facturación</b> — facturación asociada a las cuentas colocadas y su meta.</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Meta regional</b> — cumplimiento consolidado de colocación y facturación.</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Compra de millas</b> — volumen de compra por país contra meta.</span></div>
+            <div class="page"><span class="dot">07</span><span><b>Errores</b> — inconsistencias por país, responsable y código, con la acción correctiva.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Separé los estados de la cuenta (entregada, entregada sin activar, pendiente de entrega) — antes se reportaban como un solo número, ocultando el problema real.</span></div>
+            <div class="page"><span class="dot">—</span><span>Expuse la brecha entre colocar la cuenta y activarla: colocar no es facturar, y el tablero lo hace evidente.</span></div>
+            <div class="page"><span class="dot">—</span><span>Asigné responsable a cada error (banco vs. programa aliado), convirtiendo un listado en una asignación de trabajo.</span></div>
+            <div class="page"><span class="dot">—</span><span>Documenté la acción correctiva junto a cada tipo de error, para que el tablero se resuelva solo.</span></div>
+            <div class="page"><span class="dot">—</span><span>Consolidé metas de colocación, facturación y compra de millas en una sola vista regional para el comité.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#B03030"></span>
+          <span class="nm">Colocación empresarial — Programa de millas</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs5"></div>
+        <div class="dash-body" id="dbody5"></div>
+        <p class="dnote">Países, programas y códigos de error reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">Tracking de Socios — Programa de Viajero Frecuente</div>
+          <div class="proj-sub">Seguimiento semanal de envío y confirmación de socios · 6 países</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Tablero de seguimiento del envío de socios al programa de viajero frecuente aliado: cuántos se canalizan, cómo se clasifican (socio base vs. temporal), cuántos confirma efectivamente el aliado, y el desfase entre lo enviado y lo confirmado. Es un panel corto y operativo — su valor está en hacer visible una brecha que antes nadie medía.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>General</b> — mix de socio base vs. temporal, socios canalizados y confirmados por país.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Detalle semanal</b> — flujo semana a semana de envío y de confirmación.</span></div>
+          </div>
+          <h4 style="margin-top:22px">Alcance</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>3 páginas · seguimiento semanal · 6 países.</span></div>
+            <div class="page"><span class="dot">—</span><span>Un panel deliberadamente corto: una sola pregunta, respondida bien.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Medí la brecha entre socios enviados y socios confirmados por el aliado — el dato que nadie estaba mirando.</span></div>
+            <div class="page"><span class="dot">—</span><span>Separé socio base de socio temporal: la mezcla cambia por completo la lectura del volumen.</span></div>
+            <div class="page"><span class="dot">—</span><span>Revelé que la composición del envío varía drásticamente entre países, lo que explicaba diferencias de conversión que se atribuían a otras causas.</span></div>
+            <div class="page"><span class="dot">—</span><span>Sustituí un control manual en hoja de cálculo por un tablero de seguimiento semanal.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#1F4E9C"></span>
+          <span class="nm">Tracking de socios — Viajero frecuente</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs6"></div>
+        <div class="dash-body" id="dbody6"></div>
+        <p class="dnote">Países y programas reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px">
+      <div class="proj-head">
+        <div>
+          <div class="proj-title">Ciclo de Vida y Retención — Programa de Lealtad</div>
+          <div class="proj-sub">Análisis comparativo de permanencia y cancelación · 2 mercados contrastantes</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Análisis del ciclo de vida del cliente en el programa de lealtad, comparando dos mercados opuestos: el de mayor base instalada y el de menor. El objetivo no es reportar, es <b>diseñar estrategias de retención</b>: identificar quiénes se están saliendo, en qué momento del ciclo, con qué clase de tarjeta, y por qué el comportamiento difiere tanto entre ambos países pese a compartir el mismo producto.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Base de clientes</b> — clientes únicos por segmento, mercado y rango de facturación.</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Acumulación por clase</b> — millas, cuentas y viajeros frecuentes según clase de tarjeta.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Antigüedad</b> — distribución de clientes por años en el programa y por clase.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Permanencia</b> — días promedio en el programa según clase de tarjeta.</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Aniversarios</b> — listado de clientes próximos a cumplir ciclo (ventana de renovación).</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Cancelaciones</b> — listado de bajas para acción comercial directa.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué resolví</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Calculé la permanencia promedio por clase de tarjeta y encontré una brecha de más de 10x entre las clases altas y las básicas.</span></div>
+            <div class="page"><span class="dot">—</span><span>Identifiqué el año 1 como el punto de mayor concentración y mayor riesgo de abandono — la ventana donde la retención rinde más.</span></div>
+            <div class="page"><span class="dot">—</span><span>Comparé dos mercados con volúmenes opuestos para separar lo que es efecto de escala de lo que es efecto de comportamiento.</span></div>
+            <div class="page"><span class="dot">—</span><span>Entregué listas accionables (aniversarios y cancelaciones), no solo gráficos: el equipo comercial puede llamar directamente.</span></div>
+            <div class="page"><span class="dot">—</span><span>Convertí un análisis descriptivo en un insumo de estrategia de retención.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#8E44AD"></span>
+          <span class="nm">Ciclo de vida y retención — Programa de lealtad</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs7"></div>
+        <div class="dash-body" id="dbody7"></div>
+        <p class="dnote">Países, segmentos y clases de tarjeta reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+
+    <article class="proj reveal" style="margin-top:26px;border-color:#0F1E2E;border-width:2px">
+      <div class="proj-head">
+        <div>
+          <span class="eyebrow" style="color:#C29A1E">Producto bajo mi responsabilidad de datos</span>
+          <div class="proj-title" style="margin-top:6px">Programa Propio de Lealtad — Control Integral de Datos</div>
+          <div class="proj-sub">Facturación, colocación, metas y competencia · 6 países · Serie 2023–2026</div>
+        </div>
+        <span class="proj-tool">Power BI · SQL · DAX</span>
+      </div>
+
+      <p class="lead">Producto propio del banco sobre el que se me asignó <b>la responsabilidad completa del ámbito de datos</b>: definir las métricas, gobernar las fuentes, ser el punto único de verdad y sostener el reporte que la dirección usa para tomar decisiones. El panel de 14 páginas cubre facturación por emisor, tipo de transacción y clase de tarjeta; colocación y cancelaciones; cumplimiento de metas por marca y país; crecimiento interanual; y el <b>benchmark contra los programas de lealtad competidores</b> — incluidos los del propio banco.</p>
+
+      <div class="conf">Proyecto desarrollado en un entorno corporativo. El panel de abajo es una recreación con datos simulados y nombres genéricos: el diseño y la lógica analítica son los originales, las cifras no.</div>
+
+      <div class="proj-cols">
+        <div>
+          <h4>Estructura del panel</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">01</span><span><b>Análisis regional</b> — facturación neta por emisor, país y tipo (local, internacional, on-us).</span></div>
+            <div class="page"><span class="dot">02</span><span><b>Tipos de facturación</b> — por país, marca de red, clase de tarjeta y producto.</span></div>
+            <div class="page"><span class="dot">03</span><span><b>Crecimientos</b> — variación mensual e interanual desagregada por tipo de facturación.</span></div>
+            <div class="page"><span class="dot">04</span><span><b>Metas y cumplimiento</b> — objetivo vs. logrado por marca de red y país.</span></div>
+            <div class="page"><span class="dot">05</span><span><b>Colocación</b> — cuentas activas, adicionales, cancelaciones, migraciones y cobro judicial.</span></div>
+            <div class="page"><span class="dot">06</span><span><b>Benchmark competitivo</b> — el producto propio frente a los programas de lealtad rivales.</span></div>
+            <div class="page"><span class="dot">07</span><span><b>Resumen ejecutivo</b> — facturación por industria, generación y segmento.</span></div>
+          </div>
+        </div>
+        <div>
+          <h4>Qué implicó la responsabilidad</h4>
+          <div class="pages">
+            <div class="page"><span class="dot">—</span><span>Definí el marco de métricas del producto: qué se mide, cómo se calcula y qué fuente es la válida.</span></div>
+            <div class="page"><span class="dot">—</span><span>Consolidé fuentes dispersas (facturación por emisor, colocación, metas, redención) en un modelo único.</span></div>
+            <div class="page"><span class="dot">—</span><span>Construí el cálculo neto de facturación (bruto − devoluciones − retiros), que antes se reportaba en bruto y sobreestimaba el resultado.</span></div>
+            <div class="page"><span class="dot">—</span><span>Diseñé el benchmark contra los programas competidores, que reveló que el producto propio crece más rápido que todos ellos.</span></div>
+            <div class="page"><span class="dot">—</span><span>Fui el punto único de contacto de datos del producto para negocio, tecnología y dirección.</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="dash">
+        <div class="dash-bar">
+          <span class="dot" style="background:#C29A1E"></span>
+          <span class="nm">Programa propio de lealtad — Panel integral</span>
+          <span class="sim">Datos simulados</span>
+        </div>
+        <div class="dash-tabs" role="tablist" id="dtabs8"></div>
+        <div class="dash-body" id="dbody8"></div>
+        <p class="dnote">Países, marcas de red, clases de tarjeta y programas competidores reemplazados por etiquetas genéricas. Las cifras son ficticias.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- CERTIFICACIONES -->
+<section id="certificaciones">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">05</span><h2>Certificaciones &amp; formación</h2></div>
+    <div class="cert-head reveal">
+      <p class="cert-count"><b id="shown">18</b> de <span id="total">18</span> credenciales</p>
+    </div>
+    <div class="filters reveal" id="filters" role="group" aria-label="Filtrar certificaciones por área"></div>
+    <div class="cert-grid" id="certGrid"></div>
+  </div>
+</section>
+
+<!-- EDUCACIÓN -->
+<section id="educacion">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx">06</span><h2>Educación</h2></div>
+    <div class="edu reveal">
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">Licenciatura en Banca y Finanzas</div>
+          <div class="edu-inst">Universidad Fidélitas</div>
+        </div>
+        <div class="edu-yr">2022</div>
+      </div>
+      <div class="edu-item">
+        <div>
+          <div class="edu-deg">Bachillerato en Administración de Empresas</div>
+          <div class="edu-inst">Universidad Castro Carazo</div>
+        </div>
+        <div class="edu-yr">2019</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contacto">
+  <div class="wrap">
+    <div class="sec-head reveal"><span class="sec-idx" style="color:#5fd3bd">07</span><h2>Contacto</h2></div>
+    <div class="ct-grid">
+      <p class="ct-lead reveal">¿Buscas analítica que mueva resultados? Conversemos.</p>
+      <div class="ct-list reveal">
+        <div class="ct-item"><span class="k">Email</span><a class="v" href="mailto:lady.acevedo.g@gmail.com">lady.acevedo.g@gmail.com</a></div>
+        <div class="ct-item"><span class="k">Teléfono</span><a class="v" href="tel:+50670363537">+506 7036 3537</a></div>
+        <div class="ct-item"><span class="k">LinkedIn</span><a class="v" href="https://cr.linkedin.com/in/marianaacevedo93" target="_blank" rel="noopener">/in/marianaacevedo93 ↗</a></div>
+        <div class="ct-item"><span class="k">Ubicación</span><span class="v">Costa Rica · Disponibilidad inmediata</span></div>
+        <div class="ct-item"><span class="k">Idiomas</span><span class="v">Español (nativo) · Inglés (avanzado)</span></div>
+        <div class="ct-item"><span class="k">Currículum</span><a class="v" href="CV_Leidy_Mariana_Acevedo_Garcia.pdf" download>Descargar CV (PDF) ↓</a></div>
+      </div>
+    </div>
+    <div class="ct-foot">
+      <span>Leidy Mariana Acevedo García</span>
+      <span>Portafolio · 2026</span>
+    </div>
+  </div>
+</section>
+
+<script>
+  const categories = [
+    ['todas','Todas'],
+    ['datos','Datos, IA & Analítica'],
+    ['prog','Programación & SQL'],
+    ['excel','Excel & Herramientas'],
+    ['agil','Gestión & Ágiles'],
+    ['negocios','Negocios & Finanzas'],
+    ['diseno','Diseño & Marketing'],
+    ['pro','Desarrollo Profesional'],
+  ];
+  const catLabel = Object.fromEntries(categories);
+
+  const certs = [
+    {cat:'datos', name:'Introduction to Data Science', issuer:'Cisco Networking Academy', year:'2023'},
+    {cat:'datos', name:'Artificial Intelligence Fundamentals', issuer:'IBM SkillsBuild', year:'2026'},
+    {cat:'datos', name:'Data Storytelling de Impacto', issuer:'Grow Up · Data Analytics', year:'2025', hours:'15 h'},
+    {cat:'datos', name:'Introducción a la Ciencia de Datos', issuer:'Certificación de finalización', year:'2025', hours:'6 h'},
+    {cat:'datos', name:'Cisco Learn-A-Thon — Participante', issuer:'Cisco Networking Academy', year:'2023'},
+    {cat:'prog', name:'Python Essentials 1', issuer:'Cisco / OpenEDG Python Institute', year:'2023'},
+    {cat:'prog', name:'Bases de Datos SQL', issuer:'RH International Business School', year:'2024', hours:'18 h'},
+    {cat:'excel', name:'Microsoft Excel Avanzado', issuer:'Servicio Óptimo del Software', year:'2023', hours:'18 h'},
+    {cat:'excel', name:'Microsoft Excel Intermedio', issuer:'Servicio Óptimo del Software', year:'2023', hours:'18 h'},
+    {cat:'agil', name:'Scrum Foundation Professional Certification (SFPC)', issuer:'CertiProf', year:'2024'},
+    {cat:'negocios', name:'Proyección Financiera de un Negocio', issuer:'INA', year:'2023', hours:'51 h'},
+    {cat:'negocios', name:'Formulación y Evaluación de Proyectos Agropecuarios', issuer:'INA', year:'2020', hours:'48 h'},
+    {cat:'negocios', name:'Taller de Costos', issuer:'TEC Emprende Lab', year:'2025', hours:'8 h'},
+    {cat:'diseno', name:'Fundamentos de Diseño', issuer:'INA', year:'2023', hours:'80 h'},
+    {cat:'diseno', name:'Mercadeo y Redes Sociales', issuer:'INA', year:'2021', hours:'110 h'},
+    {cat:'pro', name:'Auxiliar de Autoservicios', issuer:'INA', year:'2022', hours:'144 h'},
+    {cat:'pro', name:'Sostenibilidad Ambiental', issuer:'INA', year:'2023', hours:'80 h'},
+    {cat:'pro', name:'Salud Ocupacional Básica', issuer:'INA', year:'2025', hours:'40 h'},
+  ];
+
+  const grid = document.getElementById('certGrid');
+  const filtersEl = document.getElementById('filters');
+  const shownEl = document.getElementById('shown');
+  const totalEl = document.getElementById('total');
+  totalEl.textContent = certs.length;
+
+  let active = 'todas';
+
+  function render(){
+    const list = active==='todas' ? certs : certs.filter(c=>c.cat===active);
+    grid.innerHTML = list.map(c=>`
+      <article class="cert">
+        <div class="cert-top">
+          <span class="cert-cat">${catLabel[c.cat]}</span>
+          <span class="cert-yr">${c.year}</span>
+        </div>
+        <h3 class="cert-name">${c.name}</h3>
+        <div class="cert-meta">
+          <span>${c.issuer}</span>
+          ${c.hours?`<span class="h">${c.hours}</span>`:''}
+        </div>
+      </article>`).join('');
+    shownEl.textContent = list.length;
+  }
+
+  categories.forEach(([key,label])=>{
+    const count = key==='todas'?certs.length:certs.filter(c=>c.cat===key).length;
+    if(key!=='todas' && count===0) return;
+    const b = document.createElement('button');
+    b.className='filter';
+    b.textContent = key==='todas'?`${label} · ${certs.length}`:`${label} · ${count}`;
+    b.setAttribute('aria-pressed', key==='todas'?'true':'false');
+    b.addEventListener('click',()=>{
+      active=key;
+      [...filtersEl.children].forEach(x=>x.setAttribute('aria-pressed','false'));
+      b.setAttribute('aria-pressed','true');
+      render();
+    });
+    filtersEl.appendChild(b);
+  });
+
+  render();
+
+  // ===== DASHBOARD (datos simulados) =====
+  const R='#9B2C2C', R2='#C0564E', R3='#E0938C', N='#1F3352', T='#4E9BB0', G='#B9BFC4';
+  const meses=['202501','202502','202503','202504','202505','202506','202507','202508','202509','202510','202511','202512','202601','202602','202603','202604'];
+  const fact =[180,166,190,175,188,192,205,198,193,220,215,268,240,212,232,181];
+  const yoy  =[null,-7.2,10.5,-3.1,4.0,1.2,7.4,-4.3,-2.6,12.9,-0.9,22.5,null,-9.8,7.1,-18.4];
+  const ticket=[92,95,90,88,109,86,116,110,108,120,119,141,128,125,138,126];
+  const mny=v=>'$'+v.toFixed(0)+' mill.';
+
+  function bars(data,labels,color,fmt){
+    const w=760,h=170,pad=22,max=Math.max(...data)*1.18;
+    const bw=(w-pad*2)/data.length;
+    let s=`<svg class="chart" viewBox="0 0 ${w} ${h+30}" role="img" aria-label="Gráfico de barras con datos simulados">`;
+    data.forEach((v,i)=>{
+      const bh=(v/max)*h, x=pad+i*bw+bw*0.16, y=h-bh, bwd=bw*0.68;
+      s+=`<rect x="${x}" y="${y}" width="${bwd}" height="${bh}" fill="${color}" rx="1.5"/>`;
+      s+=`<text x="${x+bwd/2}" y="${y-5}" font-size="8" font-family="IBM Plex Mono" fill="#42566B" text-anchor="middle">${fmt(v)}</text>`;
+      s+=`<text x="${x+bwd/2}" y="${h+13}" font-size="7.5" font-family="IBM Plex Mono" fill="#8695A4" text-anchor="middle">${labels[i]}</text>`;
+    });
+    return s+'</svg>';
+  }
+  function area(data,labels,color){
+    const w=760,h=160,pad=24,max=Math.max(...data)*1.15,min=0;
+    const px=i=>pad+i*((w-pad*2)/(data.length-1)), py=v=>h-((v-min)/(max-min))*h;
+    let d=`M ${px(0)} ${py(data[0])}`;
+    data.forEach((v,i)=>{ if(i) d+=` L ${px(i)} ${py(v)}`; });
+    let s=`<svg class="chart" viewBox="0 0 ${w} ${h+28}" role="img" aria-label="Gráfico de área con datos simulados">`;
+    s+=`<path d="${d} L ${px(data.length-1)} ${h} L ${px(0)} ${h} Z" fill="${color}" opacity=".16"/>`;
+    s+=`<path d="${d}" fill="none" stroke="${color}" stroke-width="1.8"/>`;
+    data.forEach((v,i)=>{
+      s+=`<circle cx="${px(i)}" cy="${py(v)}" r="2.4" fill="${color}"/>`;
+      if(i%2===0) s+=`<text x="${px(i)}" y="${h+14}" font-size="7" font-family="IBM Plex Mono" fill="#8695A4" text-anchor="middle">${labels[i]}</text>`;
+    });
+    return s+'</svg>';
+  }
+  function donut(items){
+    const total=items.reduce((a,b)=>a+b.v,0);
+    const cx=95,cy=95,r=72,ir=42; let a=-Math.PI/2, s=`<svg class="chart" viewBox="0 0 190 190" style="max-width:190px" role="img" aria-label="Gráfico de dona con datos simulados">`;
+    items.forEach(it=>{
+      const ang=(it.v/total)*Math.PI*2, e=a+ang, big=ang>Math.PI?1:0;
+      const p=(rad,t)=>[cx+rad*Math.cos(t),cy+rad*Math.sin(t)];
+      const [x1,y1]=p(r,a),[x2,y2]=p(r,e),[x3,y3]=p(ir,e),[x4,y4]=p(ir,a);
+      s+=`<path d="M ${x1} ${y1} A ${r} ${r} 0 ${big} 1 ${x2} ${y2} L ${x3} ${y3} A ${ir} ${ir} 0 ${big} 0 ${x4} ${y4} Z" fill="${it.c}"/>`;
+      a=e;
+    });
+    return s+'</svg>';
+  }
+  function hbars(items,color){
+    const max=Math.max(...items.map(i=>i.v));
+    return `<div class="hbars">`+items.map(i=>
+      `<div class="hbar"><span class="k">${i.k}</span><span class="track"><span class="fill" style="width:${(i.v/max)*100}%;background:${i.c||color}"></span></span><span class="n">${i.n}</span></div>`
+    ).join('')+`</div>`;
+  }
+  function lg(items){return `<div class="legend">`+items.map(i=>`<span><i style="background:${i.c}"></i>${i.k}</span>`).join('')+`</div>`;}
+
+  const views=[
+    {t:'Información general', q:'<b>¿Quién compone el segmento gamer y dónde factura más?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Total de clientes</div><div class="v">1.180 mil</div></div>
+        <div class="card-kpi"><div class="l">Edad promedio</div><div class="v alt">31 años</div></div>
+        <div class="card-kpi"><div class="l">Nicho regional</div><div class="v">21,4%</div></div>
+        <div class="card-kpi"><div class="l">Género predominante</div><div class="v alt">M · 64%</div></div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación por país</h5><div class="cap">Millones de dólares · simulado</div>
+          ${bars([1420,880,640,410,300,240],['P1','P2','P3','P4','P5','P6'],R,v=>'$'+v)}</div>
+        <div class="viz"><h5>Distribución por generación</h5><div class="cap">Participación de facturación</div>
+          ${hbars([{k:'Millennial',v:55,n:'55%',c:N},{k:'Gen X',v:26,n:'26%',c:R},{k:'Gen Z',v:19,n:'19%',c:R3}])}
+          <h5 style="margin-top:18px">Facturación por segmento</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Segmento A',v:2100,n:'$2.100',c:R},{k:'Segmento B',v:1980,n:'$1.980',c:N},{k:'Premium',v:340,n:'$340',c:G}])}
+        </div>
+      </div>`},
+
+    {t:'Planes de lealtad', q:'<b>¿Qué planes concentran la facturación del segmento?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Cuentas de crédito</div><div class="v">410 mil</div></div>
+        <div class="card-kpi"><div class="l">Cuentas de débito</div><div class="v alt">870 mil</div></div>
+        <div class="card-kpi"><div class="l">Total de cuentas</div><div class="v">1,3 mill.</div></div>
+        <div class="card-kpi"><div class="l">Planes activos</div><div class="v alt">18</div></div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación por plan</h5><div class="cap">Ranking descendente · millones · simulado</div>
+          ${hbars([{k:'Plan A',v:920,n:'$920'},{k:'Plan B',v:540,n:'$540'},{k:'Plan C',v:300,n:'$300'},{k:'Plan D',v:240,n:'$240'},{k:'Plan E',v:150,n:'$150'},{k:'Plan F',v:140,n:'$140'},{k:'Plan G',v:110,n:'$110'},{k:'Plan H',v:90,n:'$90'},{k:'Otros',v:70,n:'$70'}],R)}</div>
+        <div class="viz"><h5>Cuentas por país y producto</h5><div class="cap">Crédito vs. débito · miles</div>
+          ${hbars([{k:'País 1 · Cré',v:140,n:'140 mil',c:T},{k:'País 1 · Déb',v:360,n:'360 mil',c:N},{k:'País 2 · Cré',v:70,n:'70 mil',c:T},{k:'País 2 · Déb',v:200,n:'200 mil',c:N},{k:'País 3 · Cré',v:72,n:'72 mil',c:T},{k:'País 3 · Déb',v:110,n:'110 mil',c:N},{k:'País 4 · Cré',v:55,n:'55 mil',c:T},{k:'País 4 · Déb',v:115,n:'115 mil',c:N}])}
+          ${lg([{k:'Crédito',c:T},{k:'Débito',c:N}])}</div>
+      </div>`},
+
+    {t:'Ticket promedio', q:'<b>¿Cuánto gasta cada tipo de cliente por transacción?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Ticket regional</div><div class="v">$124,5</div></div>
+        <div class="card-kpi"><div class="l">Premium</div><div class="v alt">$350,0</div></div>
+        <div class="card-kpi"><div class="l">Crédito</div><div class="v alt">$165,0</div></div>
+        <div class="card-kpi"><div class="l">Débito</div><div class="v alt">$98,0</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Compra promedio por segmento</h5><div class="cap">Dólares · simulado</div>
+          ${hbars([{k:'Premium',v:350,n:'$350',c:R},{k:'Segmento B',v:205,n:'$205',c:R2},{k:'Segmento A',v:84,n:'$84',c:G}])}</div>
+        <div class="viz"><h5>Compra promedio por género</h5><div class="cap">Dólares</div>
+          ${hbars([{k:'Masculino',v:134,n:'$134',c:N},{k:'Femenino',v:105,n:'$105',c:R}])}</div>
+      </div>
+      <div class="viz"><h5>Evolución del ticket promedio</h5><div class="cap">Dólares por mes · ene 2025 – abr 2026 · simulado</div>
+        ${bars(ticket,meses.map(m=>m.slice(4)),R,v=>'$'+v)}</div>`},
+
+    {t:'Comportamiento financiero', q:'<b>¿Cómo evoluciona la facturación y quién paga de contado vs. revolvente?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Facturación mensual</h5><div class="cap">Millones de dólares · ene 2025 – abr 2026 · simulado</div>
+        ${area(fact,meses.map(m=>m.slice(4)),R)}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Totalero vs. revolvente</h5><div class="cap">Tipo de pago del cliente · millones</div>
+          ${hbars([{k:'Revolvente',v:1500,n:'$1.500',c:G},{k:'Totalero',v:1200,n:'$1.200',c:N}])}
+          <h5 style="margin-top:18px">Facturación por industria</h5><div class="cap">Sector principal del nicho</div>
+          <div style="text-align:center;padding:8px 0"><div style="font-family:'Space Grotesk';font-weight:700;font-size:1.9rem;color:${R}">$4.300 mill.</div><div style="font-family:'IBM Plex Mono';font-size:.68rem;color:#42566B">Entretenimiento</div></div>
+        </div>
+        <div class="viz"><h5>Clientes por segmento</h5><div class="cap">Distribución total · simulado</div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            ${donut([{v:66,c:R},{v:32,c:N},{v:2,c:T}])}
+            <div>${lg([{k:'Segmento A · 66%',c:R},{k:'Segmento B · 32%',c:N},{k:'Premium · 2%',c:T}])}</div>
+          </div>
+        </div>
+      </div>`},
+
+    {t:'Demografía', q:'<b>¿Qué edad, generación y red de marca concentran el consumo?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Distribución por edad</h5><div class="cap">Facturación por rango etario · simulado</div>
+          ${area([12,45,95,150,175,168,150,140,120,95,70,50,38,28,20],['20','','25','','30','','35','','40','','45','','50','','60'],R)}</div>
+        <div class="viz"><h5>Facturación por red de marca</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Red A',v:1850,n:'$1.850',c:'#E8B21E'},{k:'Red B',v:1780,n:'$1.780',c:R},{k:'Red C',v:660,n:'$660',c:N}])}
+          <h5 style="margin-top:18px">Edad promedio</h5><div class="cap">Por género</div>
+          ${hbars([{k:'Femenino',v:34,n:'34 años',c:R},{k:'Masculino',v:31,n:'31 años',c:N}])}
+        </div>
+      </div>
+      <div class="viz"><h5>Facturación por generación</h5><div class="cap">Cohorte demográfica · millones · simulado</div>
+        ${bars([2300,1100,580],['Millennial','Gen X','Gen Z'],R,v=>'$'+v)}</div>`},
+
+    {t:'Análisis gaming', q:'<b>¿Qué plataformas y marcas lideran el consumo gamer?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Facturación gaming</div><div class="v">$4,2 mil M</div></div>
+        <div class="card-kpi"><div class="l">Plataforma líder</div><div class="v alt">Consola</div></div>
+        <div class="card-kpi"><div class="l">Marcas detectadas</div><div class="v">70+</div></div>
+        <div class="card-kpi"><div class="l">Ticket máx. plataforma</div><div class="v alt">$580</div></div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación por plataforma</h5><div class="cap">Distribución del consumo gaming · simulado</div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            ${donut([{v:38,c:'#E07B39'},{v:26,c:R2},{v:16,c:R},{v:12,c:'#7A2E2E'},{v:8,c:T}])}
+            <div>${lg([{k:'Consola · 38%',c:'#E07B39'},{k:'PC · 26%',c:R2},{k:'Móvil · 16%',c:R},{k:'Multiplataforma · 12%',c:'#7A2E2E'},{k:'Otros · 8%',c:T}])}</div>
+          </div>
+        </div>
+        <div class="viz"><h5>Ticket promedio por plataforma</h5><div class="cap">Dólares por cliente</div>
+          ${hbars([{k:'Retail',v:580,n:'$580',c:'#2E1A33'},{k:'Arcade',v:210,n:'$210',c:'#2E1A33'},{k:'Hardware',v:175,n:'$175',c:'#2E1A33'},{k:'Consola',v:130,n:'$130',c:'#2E1A33'},{k:'PC',v:112,n:'$112',c:'#2E1A33'},{k:'Streaming',v:70,n:'$70',c:'#2E1A33'},{k:'Móvil',v:58,n:'$58',c:'#2E1A33'}])}</div>
+      </div>`},
+
+    {t:'Crecimiento YoY', q:'<b>¿Está creciendo el segmento frente al año anterior?</b>',
+     html:()=>{
+      const w=760,h=200,pad=24,max=Math.max(...fact)*1.2,bw=(w-pad*2)/fact.length;
+      let s=`<svg class="chart" viewBox="0 0 ${w} ${h+30}" role="img" aria-label="Facturación mensual y variación interanual, datos simulados">`;
+      fact.forEach((v,i)=>{
+        const bh=(v/max)*h,x=pad+i*bw+bw*.16,y=h-bh;
+        s+=`<rect x="${x}" y="${y}" width="${bw*.68}" height="${bh}" fill="${R}" rx="1.5"/>`;
+        s+=`<text x="${x+bw*.34}" y="${y-5}" font-size="7.5" font-family="IBM Plex Mono" fill="#42566B" text-anchor="middle">$${v}</text>`;
+        s+=`<text x="${x+bw*.34}" y="${h+14}" font-size="7" font-family="IBM Plex Mono" fill="#8695A4" text-anchor="middle">${meses[i].slice(4)}</text>`;
+      });
+      const ys=yoy.map(v=>v===null?null:v), ymax=25,ymin=-25;
+      const px=i=>pad+i*bw+bw*.5, py=v=>h*.30 + (1-((v-ymin)/(ymax-ymin)))*(h*.55);
+      let d='',started=false;
+      ys.forEach((v,i)=>{ if(v===null){started=false;return;} d+=(started?' L ':` M `)+px(i)+' '+py(v); started=true; });
+      s+=`<path d="${d}" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="4 3"/>`;
+      ys.forEach((v,i)=>{ if(v===null)return;
+        s+=`<circle cx="${px(i)}" cy="${py(v)}" r="2.8" fill="#fff" stroke="${R}" stroke-width="1"/>`;
+        s+=`<text x="${px(i)}" y="${py(v)+(v<0?13:-7)}" font-size="7" font-family="IBM Plex Mono" fill="#F0DCDC" text-anchor="middle">${v>0?'+':''}${v}%</text>`;
+      });
+      return `<div class="viz"><h5>Crecimiento financiero</h5><div class="cap">Facturación mensual y variación interanual (YoY%) · 2025–2026 · simulado</div>${s}</svg>
+        ${lg([{k:'Facturación (millones)',c:R},{k:'YoY %',c:'#C3CCC4'}])}</div>`;
+     }},
+  ];
+
+  // ---- helpers extra para el panel de aerolíneas ----
+  const B1='#2563A8', B2='#123A6B', RD='#D0342C', B3='#5FA8DC';
+  function multiline(series,labels){
+    const w=760,h=180,pad=26;
+    const all=series.flatMap(s=>s.d), max=Math.max(...all)*1.12, min=Math.min(...all)*0.85;
+    const px=i=>pad+i*((w-pad*2)/(labels.length-1)), py=v=>h-((v-min)/(max-min))*h;
+    let s=`<svg class="chart" viewBox="0 0 ${w} ${h+26}" role="img" aria-label="Series temporales con datos simulados">`;
+    series.forEach(se=>{
+      let d='';
+      se.d.forEach((v,i)=>{ d+=(i?' L ':'M ')+px(i)+' '+py(v); });
+      s+=`<path d="${d}" fill="none" stroke="${se.c}" stroke-width="1.7"/>`;
+      se.d.forEach((v,i)=>{ s+=`<circle cx="${px(i)}" cy="${py(v)}" r="2.1" fill="${se.c}"/>`; });
+    });
+    labels.forEach((l,i)=>{ s+=`<text x="${px(i)}" y="${h+14}" font-size="7" font-family="IBM Plex Mono" fill="#8695A4" text-anchor="middle">${l}</text>`; });
+    return s+'</svg>';
+  }
+  function stacked(groups,keys,colors){
+    const w=740,h=175,pad=24,bw=(w-pad*2)/groups.length;
+    let s=`<svg class="chart" viewBox="0 0 ${w} ${h+26}" role="img" aria-label="Barras apiladas 100% con datos simulados">`;
+    groups.forEach((g,i)=>{
+      const tot=keys.reduce((a,k)=>a+g.v[k],0);
+      let y=0, x=pad+i*bw+bw*.2, bwd=bw*.6;
+      keys.forEach((k,ki)=>{
+        const seg=(g.v[k]/tot)*h;
+        s+=`<rect x="${x}" y="${y}" width="${bwd}" height="${seg}" fill="${colors[ki]}"/>`;
+        if(seg>16) s+=`<text x="${x+bwd/2}" y="${y+seg/2+3}" font-size="7.5" font-family="IBM Plex Mono" fill="#fff" text-anchor="middle">${Math.round(g.v[k]/tot*100)}%</text>`;
+        y+=seg;
+      });
+      s+=`<text x="${x+bwd/2}" y="${h+14}" font-size="7.5" font-family="IBM Plex Mono" fill="#8695A4" text-anchor="middle">${g.k}</text>`;
+    });
+    return s+'</svg>';
+  }
+  function ribbon(parts,colors){
+    const tot=parts.reduce((a,b)=>a+b.v,0); let x=0;
+    let s=`<svg class="chart" viewBox="0 0 700 34" role="img" aria-label="Barra de composición con datos simulados">`;
+    parts.forEach((p,i)=>{
+      const wd=(p.v/tot)*700;
+      s+=`<rect x="${x}" y="4" width="${wd}" height="26" fill="${colors[i]}" rx="2"/>`;
+      if(wd>36) s+=`<text x="${x+wd/2}" y="21" font-size="10" font-family="IBM Plex Mono" fill="#fff" text-anchor="middle">${Math.round(p.v/tot*100)}%</text>`;
+      x+=wd;
+    });
+    return s+'</svg>';
+  }
+  function table(head,rows,align){
+    let s=`<div style="overflow-x:auto"><table style="width:100%;border-collapse:collapse;font-family:IBM Plex Mono;font-size:.72rem">`;
+    s+='<tr>'+head.map((h,i)=>`<th style="text-align:${i?'right':'left'};padding:7px 9px;border-bottom:1px solid #DCE2DC;color:#42566B;font-weight:600;white-space:nowrap">${h}</th>`).join('')+'</tr>';
+    rows.forEach((r,ri)=>{
+      const last=ri===rows.length-1;
+      s+='<tr>'+r.map((c,i)=>`<td style="text-align:${i?'right':'left'};padding:6px 9px;border-bottom:1px solid #F0F2F0;color:${last?'#0F1E2E':'#42566B'};font-weight:${last?'600':'400'};white-space:nowrap">${c}</td>`).join('')+'</tr>';
+    });
+    return s+'</table></div>';
+  }
+
+  const mesesTxt=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const viewsAir=[
+    {t:'Reporte ejecutivo', q:'<b>¿Cuántas millas y cuentas están afectadas por error, y desde hace cuánto?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Millas con error</div><div class="v" style="color:${B2}">16,7 M</div></div>
+        <div class="card-kpi"><div class="l">Cuentas con error</div><div class="v alt">2.612</div></div>
+        <div class="card-kpi"><div class="l">Error &gt; 1 año</div><div class="v" style="color:${RD}">44%</div></div>
+        <div class="card-kpi"><div class="l">Países monitoreados</div><div class="v alt">6</div></div>
+      </div>
+      <div class="viz" style="margin-bottom:14px"><h5>Millas con error por antigüedad</h5><div class="cap">Matriz país × tiempo sin corregir · simulado</div>
+        ${table(['País','Mes actual','2–3 m','4–5 m','6–11 m','1 año +','Total'],[
+          ['País 1','700','500.000','2.390.000','950.000','5.100.000','9.400.000'],
+          ['País 2','—','185.000','986.000','220.000','2.300.000','3.750.000'],
+          ['País 3','—','147.000','242.000','115.000','940.000','1.440.000'],
+          ['País 4','—','39.000','123.000','130.000','750.000','1.040.000'],
+          ['País 5','—','38.000','33.000','120.000','730.000','930.000'],
+          ['País 6','—','—','—','4.000','115.000','119.000'],
+          ['Total','700','909.000','3.774.000','1.539.000','9.935.000','16.679.000'],
+        ])}</div>
+      <div class="viz"><h5>Cuentas pendientes de confirmación con error</h5><div class="cap">Conteo por país y antigüedad · simulado</div>
+        ${table(['País','Mes actual','2–3 m','4–11 m','1 año +','Total'],[
+          ['País 1','75','175','350','470','1.070'],
+          ['País 2','189','60','130','645','1.024'],
+          ['País 3','22','28','45','105','200'],
+          ['País 4','46','25','50','5','126'],
+          ['País 5','17','21','35','30','103'],
+          ['País 6','14','18','38','10','80'],
+          ['Total','363','327','648','1.265','2.603'],
+        ])}</div>`},
+
+    {t:'Status especiales', q:'<b>¿Cuántas millas quedaron abandonadas y en qué programa?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Millas en status A</div><div class="v" style="color:${B2}">27,6 M</div></div>
+        <div class="card-kpi"><div class="l">Millas abandonadas</div><div class="v" style="color:${RD}">28,1 M</div></div>
+        <div class="card-kpi"><div class="l">Cuentas en status A</div><div class="v alt">992</div></div>
+        <div class="card-kpi"><div class="l">Concentración top-2 países</div><div class="v alt">75%</div></div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Índice de millas abandonadas</h5><div class="cap">Por país y aerolínea · simulado</div>
+          ${table(['País','Aerolínea A','Aerolínea B','Aerolínea C','Total'],[
+            ['País 2','6.350.000','195.000','7.244.000','13.790.000'],
+            ['País 1','7.911.000','34.000','2.432.000','10.378.000'],
+            ['País 4','80.000','—','2.078.000','2.159.000'],
+            ['País 6','1.692.000','14.000','—','1.707.000'],
+            ['País 5','9.000','45.000','70.000','124.000'],
+            ['Total','16.044.000','289.000','11.826.000','28.160.000'],
+          ])}</div>
+        <div class="viz"><h5>Seguimiento de cuentas en status A</h5><div class="cap">Recuento por país</div>
+          ${hbars([{k:'País 1',v:565,n:'565',c:B2},{k:'País 4',v:185,n:'185',c:B1},{k:'País 2',v:97,n:'97',c:B1},{k:'País 3',v:96,n:'96',c:B1},{k:'País 5',v:47,n:'47',c:B3},{k:'País 6',v:2,n:'2',c:B3}])}
+          <div style="margin-top:18px;text-align:center"><div style="font-family:'Space Grotesk';font-weight:700;font-size:1.8rem;color:${B2}">992</div><div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Total de cuentas en seguimiento</div></div>
+        </div>
+      </div>`},
+
+    {t:'Aerolíneas', q:'<b>¿Qué operador concentra el error en cada país?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Millas acumuladas por país y aerolínea</h5><div class="cap">Composición porcentual · simulado</div>
+          ${stacked([
+            {k:'País 1',v:{a:10527,b:6866,c:5969}},{k:'País 2',v:{a:1200,b:18671,c:2830}},
+            {k:'País 3',v:{a:7995,b:2266,c:7825}},{k:'País 4',v:{a:1380,b:1128,c:3323}},
+            {k:'País 5',v:{a:1859,b:1323,c:833}},{k:'País 6',v:{a:1838,b:120,c:60}},
+          ],['a','b','c'],[B3,B2,RD])}
+          ${lg([{k:'Aerolínea A',c:B3},{k:'Aerolínea B',c:B2},{k:'Aerolínea C',c:RD}])}</div>
+        <div class="viz"><h5>Cuentas por país y aerolínea</h5><div class="cap">Composición porcentual</div>
+          ${stacked([
+            {k:'País 1',v:{a:20,b:1084,c:8}},{k:'País 2',v:{a:188,b:794,c:40}},
+            {k:'País 3',v:{a:10,b:123,c:73}},{k:'País 4',v:{a:118,b:12,c:2}},
+            {k:'País 5',v:{a:34,b:57,c:12}},{k:'País 6',v:{a:53,b:19,c:9}},
+          ],['a','b','c'],[B3,B2,RD])}
+          ${lg([{k:'Aerolínea A',c:B3},{k:'Aerolínea B',c:B2},{k:'Aerolínea C',c:RD}])}</div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Impacto del error en millas</h5><div class="cap">Participación por aerolínea</div>
+          ${ribbon([{v:32},{v:41},{v:27}],[B3,B2,RD])}
+          ${lg([{k:'Aerolínea A · 32%',c:B3},{k:'Aerolínea B · 41%',c:B2},{k:'Aerolínea C · 27%',c:RD}])}</div>
+        <div class="viz"><h5>Impacto del error por cuenta</h5><div class="cap">Participación por aerolínea</div>
+          ${ribbon([{v:15},{v:79},{v:6}],[B3,B2,RD])}
+          ${lg([{k:'Aerolínea A · 15%',c:B3},{k:'Aerolínea B · 79%',c:B2},{k:'Aerolínea C · 6%',c:RD}])}</div>
+      </div>`},
+
+    {t:'Segmentación', q:'<b>¿Qué segmento de cliente sufre más el error?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Errores en millas asociadas a cuentas confirmadas</h5><div class="cap">Millones de millas por segmento · simulado</div>
+        ${bars([44,20,12,6,2,2,1],['Segm. A','Segm. B','Pymes','Premium','B. Privada','Wealth','Corporativo'],B2,v=>v+' mill.')}</div>
+      <div class="viz"><h5>Cuentas pendientes de confirmación con error</h5><div class="cap">Conteo por segmento</div>
+        ${bars([1024,773,656,58,28,20,8],['Segm. A','Segm. B','Pymes','Premium','Corporativo','B. Privada','Wealth'],RD,v=>v)}</div>`},
+
+    {t:'Lista de errores', q:'<b>¿Qué tipos de error concentran el volumen y cuáles son accionables?</b>',
+     html:()=>`
+      <div class="vgrid c2">
+        <div class="viz"><h5>Millas con error, por código</h5><div class="cap">Catálogo de errores · simulado</div>
+          ${table(['Código','Detalle','Millas','Cuentas'],[
+            ['E-01','Cliente no existe','9.465.000','5.118'],
+            ['E-02','Supera consumos máximos','2.986.000','23'],
+            ['E-03','Millas insuficientes para acreditar','2.361.000','2.308'],
+            ['E-04','Error inesperado','1.708.000','784'],
+            ['E-05','Fecha de actividad vencida','1.391.000','58'],
+            ['E-06','Millas en revisión','72.000','8'],
+            ['E-07','Tipo de servicio no configurado','60.000','18'],
+            ['Total','—','18.200.000','8.527'],
+          ])}</div>
+        <div class="viz"><h5>Cuentas con error, por código</h5><div class="cap">Errores de datos del cliente</div>
+          ${table(['Código','Detalle','Cuentas','Millas'],[
+            ['C-01','Error inesperado','634','9.938.000'],
+            ['C-02','Apellido en blanco','473','5.254.000'],
+            ['C-03','Correo ya registrado','381','2.284.000'],
+            ['C-04','Fecha nacimiento no concuerda','147','1.135.000'],
+            ['C-05','Número de socio no concuerda','113','275.000'],
+            ['C-06','Correo inválido','71','10.900'],
+            ['C-07','Perfil de cliente inválido','54','108.000'],
+            ['Total','—','1.873','18.995.000'],
+          ])}</div>
+      </div>`},
+
+    {t:'Histórico', q:'<b>¿La corrección de errores está mejorando o empeorando en el tiempo?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Tendencia de millas confirmadas</h5><div class="cap">Millones de millas por mes y aerolínea · simulado</div>
+        ${multiline([
+          {c:RD,d:[743,707,736,720,753,617,580,577,531,612,645,677]},
+          {c:B2,d:[661,638,664,660,666,567,518,540,571,562,590,607]},
+          {c:B1,d:[405,348,418,377,400,319,326,319,307,350,348,354]},
+        ],mesesTxt)}
+        ${lg([{k:'Aerolínea A',c:RD},{k:'Aerolínea B',c:B2},{k:'Aerolínea C',c:B1}])}</div>
+      <div class="viz"><h5>Millas pendientes de corrección</h5><div class="cap">Millones de millas por mes · simulado</div>
+        ${multiline([
+          {c:B2,d:[2.35,3.04,3.42,9.22,3.88,3.49,1.89,2.5,2.23,4.43,2.63,1.81]},
+          {c:B1,d:[1.87,3.24,0.83,1.04,0.58,0.92,0.52,0.4,1.59,0.86,0.73,1.77]},
+          {c:RD,d:[6.06,2.30,1.47,2.02,2.57,0.58,2.02,0.97,0.67,0.38,0.53,0.39]},
+        ],mesesTxt)}
+        ${lg([{k:'Aerolínea A',c:B2},{k:'Aerolínea B',c:B1},{k:'Aerolínea C',c:RD}])}</div>`},
+  ];
+
+  function mount(tabsId,bodyId,list,accent){
+    const tabs=document.getElementById(tabsId), body=document.getElementById(bodyId);
+    function show(i){
+      [...tabs.children].forEach((b,j)=>b.setAttribute('aria-selected', j===i?'true':'false'));
+      body.innerHTML = `<p class="dash-q" style="border-left-color:${accent}">${list[i].q}</p>` + list[i].html();
+    }
+    list.forEach((v,i)=>{
+      const b=document.createElement('button');
+      b.className='dtab'; b.textContent=v.t; b.setAttribute('role','tab');
+      b.setAttribute('aria-selected', i===0?'true':'false');
+      b.style.setProperty('--a',accent);
+      b.addEventListener('click',()=>show(i));
+      tabs.appendChild(b);
+    });
+    show(0);
+  }
+  // ===== DASHBOARD 3: buyer persona viajes =====
+  const TL='#12897B', TL2='#4CC3B0', TL3='#9FD8CE', OL='#7FA82B', SK='#37A9D9', AM='#E8B21E', RJ='#D94A3D', NG='#2B2F33';
+  const viewsTrip=[
+    {t:'Perfil demográfico', q:'<b>¿Quién es el cliente que compra viajes con puntos?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Clientes totales</div><div class="v" style="color:${TL}">1,4 M</div></div>
+        <div class="card-kpi"><div class="l">Generación dominante</div><div class="v alt">Millennial</div></div>
+        <div class="card-kpi"><div class="l">Edad promedio de compra</div><div class="v alt">39 años</div></div>
+        <div class="card-kpi"><div class="l">Género predominante</div><div class="v" style="color:${TL}">M · 57%</div></div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Clientes por generación</h5><div class="cap">Miles de clientes · simulado</div>
+          ${bars([808,460,231,180,14],['Millennial','Gen X','Gen Z','Boomers','Silenciosa'],TL,v=>v+' mil')}</div>
+        <div class="viz"><h5>Clientes por segmento</h5><div class="cap">Miles de clientes</div>
+          ${hbars([{k:'Segmento A',v:936,n:'936 mil',c:TL},{k:'Segmento B',v:405,n:'405 mil',c:TL2},{k:'Pymes',v:37,n:'37 mil',c:OL},{k:'Premium',v:26,n:'26 mil',c:AM},{k:'B. Privada',v:6,n:'6 mil',c:SK},{k:'Wealth',v:3,n:'3 mil',c:NG}])}
+          <h5 style="margin-top:18px">Mix de género por país</h5><div class="cap">Participación M / F</div>
+          ${stacked([
+            {k:'País 1',v:{m:57,f:43}},{k:'País 2',v:{m:53,f:47}},{k:'País 3',v:{m:59,f:41}},
+            {k:'País 4',v:{m:57,f:43}},{k:'País 5',v:{m:61,f:39}},{k:'País 6',v:{m:57,f:43}},
+          ],['m','f'],[TL,TL3])}
+          ${lg([{k:'Masculino',c:TL},{k:'Femenino',c:TL3}])}
+        </div>
+      </div>`},
+
+    {t:'Facturación', q:'<b>¿En qué edad, segmento y tipo de tarjeta se concentra el gasto?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Curva de facturación por edad</h5><div class="cap">Edad promedio de compra: 39 años · simulado</div>
+        ${area([5,18,52,105,148,168,175,170,155,132,108,84,62,44,28,16],['10','','20','','30','','40','','50','','60','','70','','','80'],TL)}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación por segmento</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Segmento B',v:33530,n:'$33.530',c:RJ},{k:'Segmento A',v:8057,n:'$8.057',c:RJ},{k:'Premium',v:4616,n:'$4.616',c:NG},{k:'B. Privada',v:1660,n:'$1.660',c:TL3}])}
+          <h5 style="margin-top:18px">Facturación por uso</h5><div class="cap">Crédito vs. débito</div>
+          ${hbars([{k:'Crédito',v:40216,n:'$40.216',c:TL},{k:'Débito',v:7622,n:'$7.622',c:TL3}])}</div>
+        <div class="viz"><h5>Facturación por clase de producto</h5><div class="cap">Propio vs. co-branding · millones</div>
+          ${hbars([{k:'Propio',v:30230,n:'$30.230',c:OL},{k:'Co-branding',v:17483,n:'$17.483',c:RJ}])}
+          <div style="margin-top:20px;text-align:center">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:1.7rem;color:${TL}">63% / 37%</div>
+            <div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Reparto propio vs. co-branding</div>
+          </div>
+        </div>
+      </div>`},
+
+    {t:'Programas de lealtad', q:'<b>¿Qué programa de lealtad mueve la redención en viajes?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Facturación por programa de lealtad</h5><div class="cap">Ranking descendente · millones · simulado</div>
+          ${hbars([{k:'Programa A',v:7300,n:'$7.300',c:NG},{k:'Programa B',v:7100,n:'$7.100',c:NG},{k:'Programa C',v:6141,n:'$6.141',c:TL},{k:'Programa D',v:5516,n:'$5.516',c:TL},{k:'Programa E',v:4301,n:'$4.301',c:TL2},{k:'Programa F',v:4094,n:'$4.094',c:TL2},{k:'Programa G',v:4081,n:'$4.081',c:TL2},{k:'Programa H',v:2355,n:'$2.355',c:TL3},{k:'Otros',v:1718,n:'$1.718',c:TL3}])}</div>
+        <div class="viz"><h5>Facturación por clase de tarjeta</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Clase 1',v:20905,n:'$20.905',c:NG},{k:'Clase 2',v:9743,n:'$9.743',c:TL},{k:'Clase 3',v:8816,n:'$8.816',c:TL2},{k:'Clase 4',v:7907,n:'$7.907',c:AM},{k:'Clase 5',v:289,n:'$290',c:TL3},{k:'Clase 6',v:179,n:'$179',c:TL3}])}</div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Revolvente vs. totalero</h5><div class="cap">Facturación · millones</div>
+          ${hbars([{k:'Totalero',v:20658,n:'$20.658',c:TL},{k:'Revolvente',v:20597,n:'$20.597',c:TL2}])}</div>
+        <div class="viz"><h5>Clientes revolvente / totalero</h5><div class="cap">Miles de clientes</div>
+          ${hbars([{k:'Totalero',v:759,n:'760 mil',c:TL},{k:'Revolvente',v:661,n:'662 mil',c:TL2}])}</div>
+      </div>`},
+
+    {t:'Ticket promedio', q:'<b>¿Cuánto gasta cada perfil por compra en la plataforma?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Ticket clase alta</div><div class="v" style="color:${TL}">$3.000</div></div>
+        <div class="card-kpi"><div class="l">Ticket crédito</div><div class="v alt">$1.878</div></div>
+        <div class="card-kpi"><div class="l">Ticket débito</div><div class="v alt">$879</div></div>
+        <div class="card-kpi"><div class="l">Brecha por género</div><div class="v alt">&lt; 2%</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Ticket promedio por clase de tarjeta</h5><div class="cap">Dólares · simulado</div>
+          ${bars([3000,2400,2100,2000,1500,1200,1000],['Clase 1','Clase 2','Clase 3','Clase 4','Clase 5','Clase 6','Clase 7'],TL,v=>'$'+(v/1000).toFixed(1)+'k')}</div>
+        <div class="viz"><h5>Ticket promedio por generación</h5><div class="cap">Dólares</div>
+          ${bars([2900,2400,2200,1900,1300,700],['Grandiosa','Silenciosa','Boomers','Gen X','Millennial','Gen Z'],OL,v=>'$'+(v/1000).toFixed(1)+'k')}</div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Ticket promedio por marca de red</h5><div class="cap">Dólares</div>
+          ${hbars([{k:'Marca A',v:2158,n:'$2.158',c:'#1F4E9C'},{k:'Marca B',v:1544,n:'$1.544',c:AM},{k:'Marca C',v:1406,n:'$1.406',c:RJ}])}</div>
+        <div class="viz"><h5>Ticket promedio por industria</h5><div class="cap">Miles de dólares</div>
+          ${hbars([{k:'Aerolíneas',v:2600,n:'$2,6 k',c:TL3},{k:'Agencias',v:2300,n:'$2,3 k',c:SK},{k:'Rent a car',v:1100,n:'$1,1 k',c:AM},{k:'Hoteles',v:900,n:'$0,9 k',c:OL}])}</div>
+      </div>`},
+
+    {t:'Industrias', q:'<b>¿Qué vertical turístico prefiere cada generación y cada país?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Facturación por industria</h5><div class="cap">Millones de dólares · simulado</div>
+        ${bars([20554,14037,11346,1925],['Aerolíneas','Hoteles','Agencias de viaje','Rent a car'],TL,v=>'$'+(v/1000).toFixed(1)+'k mill.')}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Mix de industria por generación</h5><div class="cap">Participación porcentual</div>
+          ${stacked([
+            {k:'Millennial',v:{a:43,b:26,c:27,d:4}},{k:'Gen X',v:{a:44,b:23,c:29,d:4}},
+            {k:'Boomers',v:{a:46,b:22,c:29,d:3}},{k:'Gen Z',v:{a:38,b:32,c:27,d:3}},
+            {k:'Silenciosa',v:{a:44,b:21,c:32,d:3}},
+          ],['a','b','c','d'],[TL3,SK,OL,AM])}
+          ${lg([{k:'Aerolíneas',c:TL3},{k:'Agencias',c:SK},{k:'Hoteles',c:OL},{k:'Rent a car',c:AM}])}</div>
+        <div class="viz"><h5>Mix de industria por país</h5><div class="cap">Participación porcentual</div>
+          ${stacked([
+            {k:'País 1',v:{a:39,b:25,c:31,d:5}},{k:'País 2',v:{a:45,b:23,c:28,d:4}},
+            {k:'País 3',v:{a:47,b:26,c:24,d:3}},{k:'País 4',v:{a:48,b:20,c:28,d:4}},
+            {k:'País 5',v:{a:53,b:21,c:22,d:4}},{k:'País 6',v:{a:51,b:20,c:26,d:3}},
+          ],['a','b','c','d'],[TL3,SK,OL,AM])}
+          ${lg([{k:'Aerolíneas',c:TL3},{k:'Agencias',c:SK},{k:'Hoteles',c:OL},{k:'Rent a car',c:AM}])}</div>
+      </div>`},
+
+    {t:'Persona vs. jurídico', q:'<b>¿En qué se diferencia el cliente empresarial del cliente individual?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Participación de facturación</h5><div class="cap">Persona física vs. jurídica · simulado</div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            ${donut([{v:82,c:TL},{v:18,c:AM}])}
+            <div>${lg([{k:'Persona física · 82%',c:TL},{k:'Persona jurídica · 18%',c:AM}])}</div>
+          </div>
+        </div>
+        <div class="viz"><h5>Ticket promedio comparado</h5><div class="cap">Dólares por compra</div>
+          ${hbars([{k:'Jurídica',v:4200,n:'$4.200',c:AM},{k:'Física',v:1560,n:'$1.560',c:TL}])}
+          <h5 style="margin-top:18px">Industria preferida</h5><div class="cap">Vertical con mayor peso</div>
+          ${hbars([{k:'Jurídica',v:100,n:'Aerolíneas · 61%',c:AM},{k:'Física',v:70,n:'Aerolíneas · 43%',c:TL}])}
+        </div>
+      </div>
+      <div class="viz"><h5>Top de comercios en la plataforma</h5><div class="cap">Ranking por facturación · millones · simulado</div>
+        ${hbars([{k:'Comercio 1',v:4283,n:'$4.283',c:TL},{k:'Comercio 2',v:2184,n:'$2.184',c:TL},{k:'Comercio 3',v:1892,n:'$1.892',c:TL2},{k:'Comercio 4',v:1378,n:'$1.378',c:TL2},{k:'Comercio 5',v:1281,n:'$1.281',c:TL2},{k:'Comercio 6',v:957,n:'$957',c:TL3},{k:'Comercio 7',v:849,n:'$849',c:TL3},{k:'Otros',v:620,n:'$620',c:TL3}])}</div>`},
+  ];
+
+  // ===== DASHBOARD 4: informe gerencial =====
+  const CY='#1E7A8C', CY2='#4FB3C4', CY3='#A8DCE3', GY='#B8BDBF', GY2='#8A9296';
+  function goalBars(items){
+    const max=Math.max(...items.map(i=>i.meta));
+    const w=740,h=170,pad=20,bw=(w-pad*2)/items.length;
+    let s=`<svg class="chart" viewBox="0 0 ${w} ${h+40}" role="img" aria-label="Meta vs logrado, datos simulados">`;
+    items.forEach((it,i)=>{
+      const x=pad+i*bw, mh=(it.meta/max)*h, lh=(it.log/max)*h, bwd=bw*.32;
+      s+=`<rect x="${x+bw*.12}" y="${h-mh}" width="${bwd}" height="${mh}" fill="${GY}" rx="1.5"/>`;
+      s+=`<text x="${x+bw*.12+bwd/2}" y="${h-mh-5}" font-size="7.5" font-family="IBM Plex Mono" fill="#8695A4" text-anchor="middle">$${it.meta}M</text>`;
+      s+=`<rect x="${x+bw*.5}" y="${h-lh}" width="${bwd}" height="${lh}" fill="${CY}" rx="1.5"/>`;
+      s+=`<text x="${x+bw*.5+bwd/2}" y="${h-lh-5}" font-size="7.5" font-family="IBM Plex Mono" fill="#1E7A8C" text-anchor="middle">$${it.log}M</text>`;
+      s+=`<text x="${x+bw*.42}" y="${h+16}" font-size="8" font-family="IBM Plex Mono" fill="#42566B" text-anchor="middle">${it.k}</text>`;
+      s+=`<text x="${x+bw*.42}" y="${h+30}" font-size="9" font-weight="600" font-family="Space Grotesk" fill="${it.pct<50?'#C0392B':'#0E7C66'}" text-anchor="middle">${it.pct}%</text>`;
+    });
+    return s+'</svg>';
+  }
+  const mesesFull=['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'];
+  const viewsMgmt=[
+    {t:'Indicadores', q:'<b>¿Vamos a cumplir la meta del año, y qué lo está frenando?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Meta anual</div><div class="v alt">$25,0 M</div></div>
+        <div class="card-kpi"><div class="l">Cumplimiento</div><div class="v" style="color:#C0392B">44%</div></div>
+        <div class="card-kpi"><div class="l">Market share</div><div class="v" style="color:${CY}">6,0%</div></div>
+        <div class="card-kpi"><div class="l">Tasa de cierre</div><div class="v" style="color:#C0392B">0,88%</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Facturación anual</h5><div class="cap">Millones de dólares · simulado</div>
+          ${bars([8.1,8.4,8.3,7.3,14.6,11.0],['2021','2022','2023','2024','2025','2026'],CY,v=>'$'+v.toFixed(1)+'M')}</div>
+        <div class="viz"><h5>Market share mensual</h5><div class="cap">Año actual vs. anterior</div>
+          ${multiline([
+            {c:CY,d:[4.0,3.8,3.5,5.6,6.7,4.3,4.4,4.1,5.3,4.8,4.2,2.9]},
+            {c:GY2,d:[3.5,3.2,2.8,3.1,3.9,4.0,3.7,3.5,3.9,4.1,3.6,2.9]},
+          ],mesesFull)}
+          ${lg([{k:'Año actual',c:CY},{k:'Año anterior',c:GY2}])}</div>
+      </div>
+      <div class="viz"><h5>Embudo de tráfico web</h5><div class="cap">Sesiones mensuales (miles) y tasa de cierre · simulado</div>
+        ${bars([247,345,481,645,804,645],['Ene','Feb','Mar','Abr','May','Jun'],CY2,v=>v+' mil')}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Tasa de cierre: 1,13% → 0,81% → 0,67% → 0,68% → 0,69% — el tráfico sube, la conversión no.</div></div>`},
+
+    {t:'Metas', q:'<b>¿Qué línea de producto y qué país están incumpliendo?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Resultado vs. meta por línea de producto</h5><div class="cap">Millones de dólares · simulado</div>
+        ${goalBars([
+          {k:'Total',meta:25,log:11,pct:44},
+          {k:'Aéreo',meta:18.2,log:11.9,pct:65},
+          {k:'Terrestre',meta:4.8,log:2.6,pct:54},
+          {k:'Rent a car',meta:1.3,log:0.4,pct:31},
+          {k:'Parques',meta:0.4,log:0.14,pct:37},
+          {k:'Experiencias',meta:0.35,log:0.01,pct:4},
+        ])}</div>
+      <div class="viz"><h5>Cumplimiento de meta por país</h5><div class="cap">Meta vs. logrado · millones · simulado</div>
+        ${goalBars([
+          {k:'País 1',meta:8.2,log:4.3,pct:53},
+          {k:'País 2',meta:6.8,log:2.9,pct:43},
+          {k:'País 3',meta:4.3,log:2.3,pct:54},
+          {k:'País 4',meta:2.5,log:0.8,pct:31},
+          {k:'País 5',meta:2.2,log:0.4,pct:20},
+          {k:'País 6',meta:1.0,log:0.2,pct:25},
+        ])}</div>`},
+
+    {t:'Por producto', q:'<b>¿Qué producto genera la facturación y con qué ticket?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Detalle general de reservaciones</h5><div class="cap">Facturación, reservas y ticket promedio · simulado</div>
+        ${table(['Producto','Facturación','Reservas','Ticket promedio'],[
+          ['Vuelos','$8.997 mil','9.602','$937'],
+          ['Hoteles','$1.505 mil','2.983','$504'],
+          ['Autos','$336 mil','851','$394'],
+          ['Parques temáticos','$118 mil','146','$809'],
+          ['Actividades','$41 mil','152','$273'],
+          ['Experiencias','$13 mil','11','$1.188'],
+          ['Total','$11.011 mil','13.745','$801'],
+        ])}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Top de aerolíneas</h5><div class="cap">Facturación · simulado</div>
+          ${hbars([{k:'Aerolínea A',v:1880,n:'$1,88 M · 2.318 res.',c:CY},{k:'Aerolínea B',v:1229,n:'$1,23 M · 1.536 res.',c:CY},{k:'Aerolínea C',v:923,n:'$923 k · 859 res.',c:CY2},{k:'Aerolínea D',v:903,n:'$903 k · 1.046 res.',c:CY2},{k:'Aerolínea E',v:504,n:'$504 k · 600 res.',c:CY3}])}</div>
+        <div class="viz"><h5>Ventas mensuales por producto</h5><div class="cap">Miles de dólares</div>
+          ${bars([1449,1385,1308,1690,2365,1854,387],['Ene','Feb','Mar','Abr','May','Jun','Jul'],CY,v=>'$'+v)}</div>
+      </div>`},
+
+    {t:'Serie histórica', q:'<b>¿Cómo se comportó el producto en 10 años, incluida la pandemia?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Facturación anual y crecimiento</h5><div class="cap">Millones de dólares · 2017–2026 · simulado</div>
+        ${bars([6.2,11.8,19.1,7.8,10.5,8.4,8.3,7.3,14.6,11.0],['2017','2018','2019','2020','2021','2022','2023','2024','2025','2026'],CY,v=>'$'+v.toFixed(1))}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Crecimiento: +88,7% · +62,2% · <span style="color:#C0392B">−59,5%</span> · +35,8% · −19,9% · −1,1% · −13,0% · <span style="color:#0E7C66">+101,3%</span> · −24,6%</div></div>
+      <div class="viz"><h5>Comparativo interanual mensual</h5><div class="cap">Año actual vs. anterior · millones · simulado</div>
+        ${multiline([
+          {c:CY,d:[1.5,1.5,1.4,1.8,2.5,1.9,0.5,0,0,0,0,0].map(v=>v||0.05)},
+          {c:GY2,d:[1.1,0.9,0.9,1.0,1.2,1.2,1.3,1.4,1.4,1.4,1.7,1.2]},
+        ],mesesFull)}
+        ${lg([{k:'Año actual',c:CY},{k:'Año anterior',c:GY2}])}</div>`},
+
+    {t:'Formas de pago', q:'<b>¿Cuánto del producto se financia con redención de puntos?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Pago mixto</div><div class="v" style="color:${CY}">49,0%</div></div>
+        <div class="card-kpi"><div class="l">Redención pura</div><div class="v alt">27,4%</div></div>
+        <div class="card-kpi"><div class="l">Tasa cero</div><div class="v alt">18,1%</div></div>
+        <div class="card-kpi"><div class="l">Cargo directo</div><div class="v alt">5,2%</div></div>
+      </div>
+      <div class="viz" style="margin-bottom:14px"><h5>Mix de forma de pago por país</h5><div class="cap">Participación porcentual · simulado</div>
+        ${stacked([
+          {k:'País 1',v:{a:19,b:27,c:51,d:3}},{k:'País 2',v:{a:38,b:9,c:32,d:21}},
+          {k:'País 3',v:{a:8,b:31,c:56,d:5}},{k:'País 4',v:{a:16,b:33,c:49,d:2}},
+          {k:'País 5',v:{a:23,b:23,c:44,d:10}},{k:'País 6',v:{a:51,b:8,c:20,d:21}},
+        ],['a','b','c','d'],[CY3,CY,CY2,GY])}
+        ${lg([{k:'Tasa cero',c:CY3},{k:'Redención',c:CY},{k:'Mixta',c:CY2},{k:'Cargo a tarjeta',c:GY}])}</div>
+      <div class="viz"><h5>Valor de puntos redimidos</h5><div class="cap">Miles de dólares por país · simulado</div>
+        ${hbars([{k:'País 1',v:1129,n:'$1.129 k',c:CY},{k:'País 3',v:672,n:'$672 k',c:CY2},{k:'País 4',v:286,n:'$286 k',c:CY2},{k:'País 2',v:31,n:'$32 k',c:CY3}])}</div>`},
+
+    {t:'Destinos', q:'<b>¿A dónde viaja el cliente y desde dónde sale?</b>',
+     html:()=>`
+      <div class="vgrid c2">
+        <div class="viz"><h5>Destinos finales más frecuentes</h5><div class="cap">Miles de dólares · simulado</div>
+          ${hbars([{k:'Destino 1',v:1071,n:'$1.071 k · 1.020',c:'#123A6B'},{k:'Destino 2',v:711,n:'$711 k · 1.402',c:'#123A6B'},{k:'Destino 3',v:592,n:'$592 k · 1.307',c:'#1E5AA8'},{k:'Destino 4',v:466,n:'$466 k · 1.067',c:'#1E5AA8'},{k:'Destino 5',v:360,n:'$360 k · 883',c:'#3A85C9'},{k:'Destino 6',v:333,n:'$333 k · 573',c:'#3A85C9'},{k:'Destino 7',v:308,n:'$308 k · 781',c:'#6BAEDB'},{k:'Destino 8',v:298,n:'$298 k · 639',c:'#6BAEDB'},{k:'Destino 9',v:215,n:'$215 k · 394',c:'#9CCBE8'},{k:'Destino 10',v:204,n:'$204 k · 319',c:'#9CCBE8'}])}</div>
+        <div class="viz"><h5>Ciudades de salida</h5><div class="cap">Millones de dólares · simulado</div>
+          ${hbars([{k:'Ciudad 1',v:3060,n:'$3,06 M',c:'#0E4038'},{k:'Ciudad 2',v:1890,n:'$1,89 M',c:'#1A6355'},{k:'Ciudad 3',v:720,n:'$0,72 M',c:'#3E8C7A'},{k:'Ciudad 4',v:690,n:'$0,69 M',c:'#3E8C7A'},{k:'Ciudad 5',v:670,n:'$0,67 M',c:'#6BAF9E'},{k:'Ciudad 6',v:360,n:'$0,36 M',c:'#6BAF9E'},{k:'Ciudad 7',v:160,n:'$0,16 M',c:'#9FCEC2'},{k:'Otras',v:270,n:'$0,27 M',c:'#C2E0D8'}])}</div>
+      </div>
+      <div class="viz" style="margin-top:14px"><h5>Transacciones mensuales por mercado</h5><div class="cap">Conteo de transacciones · simulado</div>
+        ${table(['Mercado','Ene','Feb','Mar','Abr','May','Jun','Total'],[
+          ['País 1','868','744','766','786','944','919','5.267'],
+          ['País 2','798','548','547','661','613','606','3.897'],
+          ['País 3','331','412','349','393','856','393','2.839'],
+          ['País 4','108','108','181','194','129','218','974'],
+          ['País 5','60','107','56','86','74','56','450'],
+          ['País 6','37','42','57','50','73','46','318'],
+          ['Total','2.202','1.961','1.956','2.170','2.689','2.238','13.745'],
+        ])}</div>`},
+  ];
+
+  // ===== DASHBOARD 5: colocación empresarial =====
+  const MR='#B03030', MR2='#D96A5E', MG='#C9C9C9', MG2='#8C8C8C';
+  const mesesLM=['2026-01','2026-02','2026-03','2026-04','2026-05','2026-06','2026-07'];
+  const viewsLM=[
+    {t:'Colocación por país', q:'<b>¿Cuántas cuentas se colocaron y cuántas quedaron sin activar?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Cuentas entregadas</div><div class="v" style="color:${MR}">4.218</div></div>
+        <div class="card-kpi"><div class="l">Entregadas sin activar</div><div class="v alt">941</div></div>
+        <div class="card-kpi"><div class="l">Pendientes de entrega</div><div class="v alt">572</div></div>
+        <div class="card-kpi"><div class="l">Tasa de activación</div><div class="v" style="color:#C0392B">78%</div></div>
+      </div>
+      <div class="viz" style="margin-bottom:14px"><h5>Cuentas entregadas al cliente</h5><div class="cap">Por país y mes de reporte · simulado</div>
+        ${table(['País','Ene','Feb','Mar','Abr','May','Jun','Total'],[
+          ['País 1','199','227','499','156','294','279','1.660'],
+          ['País 2','10','17','53','391','363','296','1.136'],
+          ['País 3','115','113','235','181','230','142','1.021'],
+          ['País 4','2','7','57','38','49','50','204'],
+          ['País 5','25','16','20','24','23','27','137'],
+          ['País 6','4','3','15','13','15','9','60'],
+          ['Total','355','383','879','803','974','803','4.218'],
+        ])}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Entregadas sin activar</h5><div class="cap">Total acumulado por país</div>
+          ${hbars([{k:'País 2',v:507,n:'507',c:MR},{k:'País 1',v:247,n:'247',c:MR},{k:'País 3',v:129,n:'129',c:MR2},{k:'País 4',v:46,n:'46',c:MR2},{k:'País 5',v:11,n:'11',c:MG},{k:'País 6',v:1,n:'1',c:MG}])}</div>
+        <div class="viz"><h5>Pendientes de entrega</h5><div class="cap">Total acumulado por país</div>
+          ${hbars([{k:'País 2',v:290,n:'290',c:MR},{k:'País 1',v:216,n:'216',c:MR},{k:'País 3',v:34,n:'34',c:MR2},{k:'País 4',v:23,n:'23',c:MG},{k:'País 6',v:6,n:'6',c:MG},{k:'País 5',v:3,n:'3',c:MG}])}</div>
+      </div>`},
+
+    {t:'Colocación por periodo', q:'<b>¿La colocación mejora mes a mes, o solo crece la cola de pendientes?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Cuentas entregadas por fecha de ingreso</h5><div class="cap">Conteo mensual · simulado</div>
+        ${area([355,383,879,803,974,803,21],mesesLM.map(m=>m.slice(5)),MR)}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Sin activar por fecha de ingreso</h5><div class="cap">Tendencia creciente</div>
+          ${bars([29,39,68,185,255,356,9],mesesLM.map(m=>m.slice(5)),MR2,v=>v)}</div>
+        <div class="viz"><h5>Pendientes de entrega por fecha de ingreso</h5><div class="cap">Tendencia creciente</div>
+          ${bars([7,4,10,60,117,278,96],mesesLM.map(m=>m.slice(5)),MG2,v=>v)}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">La colocación se mantiene, pero la cola de cuentas sin activar y sin entregar crece cada mes.</div></div>
+      </div>`},
+
+    {t:'Metas', q:'<b>¿Qué país está cumpliendo la meta de colocación?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Meta de colocación anual vs. logrado</h5><div class="cap">Número de cuentas · simulado</div>
+        ${goalBars([
+          {k:'País 1',meta:5280,log:1644,pct:31},
+          {k:'País 2',meta:3680,log:1136,pct:31},
+          {k:'País 3',meta:1248,log:1021,pct:82},
+          {k:'País 4',meta:576,log:201,pct:35},
+          {k:'País 5',meta:166,log:137,pct:83},
+          {k:'País 6',meta:52,log:59,pct:115},
+        ])}</div>
+      <div class="viz"><h5>Lectura del cumplimiento</h5><div class="cap">Diagnóstico</div>
+        <div style="font-family:Inter;font-size:.92rem;color:#42566B;line-height:1.6">
+          Los dos países con la meta más grande (1 y 2) están apenas en el 31%. Los que sobrecumplen tienen metas pequeñas. El resultado regional depende casi por completo de corregir los dos primeros — no de premiar a los que ya cumplieron.
+        </div></div>`},
+
+    {t:'Facturación', q:'<b>¿La colocación se está traduciendo en facturación?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Facturación por país y mes</h5><div class="cap">Dólares · simulado</div>
+        ${table(['País','Ene','Feb','Mar','Abr','May','Total'],[
+          ['País 3','$543.320','$1.015.304','$1.518.909','$1.910.818','$2.819.000','$7.807.351'],
+          ['País 1','$165.316','$476.718','$934.745','$1.237.061','$1.829.000','$4.642.841'],
+          ['País 4','$4.279','$63.897','$426.153','$318.560','$577.000','$1.389.890'],
+          ['País 5','$107.694','$79.937','$168.466','$123.581','$201.000','$680.681'],
+          ['País 2','$3.615','$5.212','$40.576','$184.253','$340.000','$573.657'],
+          ['País 6','$10.679','$25.078','$59.176','$189.561','$201.000','$485.496'],
+          ['Regional','$834.905','$1.666.149','$3.148.027','$3.963.836','$5.967.000','$15.579.918'],
+        ])}</div>
+      <div class="viz"><h5>Cumplimiento de meta en facturación</h5><div class="cap">Millones de dólares · simulado</div>
+        ${goalBars([
+          {k:'País 3',meta:12.1,log:7.9,pct:65},
+          {k:'País 1',meta:15.2,log:4.6,pct:30},
+          {k:'País 5',meta:1.7,log:0.7,pct:41},
+          {k:'País 4',meta:0.9,log:0.5,pct:55},
+          {k:'País 2',meta:15.8,log:0.6,pct:4},
+          {k:'País 6',meta:12.9,log:1.4,pct:11},
+        ])}</div>`},
+
+    {t:'Meta regional', q:'<b>¿Cómo va la región contra el objetivo consolidado?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Meta de colocación regional</h5><div class="cap">Número de cuentas · simulado</div>
+          ${goalBars([{k:'Regional',meta:11002,log:4218,pct:38}])}
+          <div style="text-align:center;margin-top:6px"><div style="font-family:'Space Grotesk';font-weight:700;font-size:2.2rem;color:#C0392B">38%</div><div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Cumplimiento regional de colocación</div></div>
+        </div>
+        <div class="viz"><h5>Meta de facturación regional</h5><div class="cap">Millones de dólares · simulado</div>
+          ${goalBars([{k:'Regional',meta:58.6,log:15.7,pct:27}])}
+          <div style="text-align:center;margin-top:6px"><div style="font-family:'Space Grotesk';font-weight:700;font-size:2.2rem;color:#C0392B">27%</div><div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Cumplimiento regional de facturación</div></div>
+        </div>
+      </div>
+      <div class="viz"><h5>Compra de millas vs. meta</h5><div class="cap">Miles de dólares por país · simulado</div>
+        ${goalBars([
+          {k:'País 3',meta:148,log:174,pct:118},
+          {k:'País 1',meta:167,log:67,pct:40},
+          {k:'País 5',meta:20,log:23,pct:114},
+          {k:'País 4',meta:159,log:18,pct:11},
+          {k:'País 2',meta:195,log:12,pct:6},
+          {k:'País 6',meta:11,log:11,pct:98},
+        ])}</div>`},
+
+    {t:'Errores', q:'<b>¿Quién es responsable de cada inconsistencia y cómo se corrige?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Responsable del error</h5><div class="cap">Distribución · simulado</div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            ${donut([{v:35,c:MR},{v:19,c:MG}])}
+            <div>${lg([{k:'Programa aliado · 65%',c:MR},{k:'Banco · 35%',c:MG}])}</div>
+          </div>
+        </div>
+        <div class="viz"><h5>Errores por país</h5><div class="cap">Conteo total</div>
+          ${hbars([{k:'País 1',v:45,n:'45',c:MR},{k:'País 4',v:6,n:'6',c:MR2},{k:'País 2',v:1,n:'1',c:MG},{k:'País 3',v:1,n:'1',c:MG},{k:'País 5',v:1,n:'1',c:MG}])}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:12px">54 errores regionales · 83% concentrados en un solo país.</div></div>
+      </div>
+      <div class="viz"><h5>Catálogo de errores y acción correctiva</h5><div class="cap">Simulado</div>
+        ${table(['Código','Detalle','Casos','Responsable','Acción correctiva'],[
+          ['E-112','Datos incompletos del viajero frecuente','37','Programa aliado','Enviar nombre de empresa y correo de las cuentas afectadas al líder de corrección de cada país.'],
+          ['E-046','Falta información del viajero frecuente','14','Banco','Completar el registro en origen antes del envío.'],
+          ['E-024','Registro sin marca asignada','2','Banco','Asignar marca en el alta de la cuenta.'],
+          ['E-999','Error inesperado','1','Programa aliado','Escalar a soporte técnico del aliado.'],
+        ])}</div>`},
+  ];
+
+  // ===== DASHBOARD 6: tracking de socios =====
+  const AZ='#1F4E9C', AZ2='#4A7FC1', GR='#9AA0A6', GR2='#C4C9CD';
+  const viewsVF=[
+    {t:'General', q:'<b>¿Cuántos socios se canalizan, de qué tipo, y cuántos confirma el aliado?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Socio base</div><div class="v" style="color:${AZ}">32%</div></div>
+        <div class="card-kpi"><div class="l">Socio temporal</div><div class="v alt">68%</div></div>
+        <div class="card-kpi"><div class="l">Socios enviados</div><div class="v alt">8.048</div></div>
+        <div class="card-kpi"><div class="l">Confirmados por aliado</div><div class="v" style="color:#C0392B">5.737</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Distribución por tipo de socio</h5><div class="cap">Conteo total · simulado</div>
+          ${bars([5434,2614],['Socio temporal','Socio base'],AZ,v=>v)}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Dos de cada tres socios enviados son temporales.</div></div>
+        <div class="viz"><h5>Socios confirmados por país</h5><div class="cap">Conteo · simulado</div>
+          ${hbars([{k:'País 1',v:4250,n:'4.250',c:AZ},{k:'País 2',v:2301,n:'2.301',c:AZ},{k:'País 3',v:1466,n:'1.466',c:AZ2},{k:'País 4',v:603,n:'603',c:AZ2},{k:'País 5',v:120,n:'120',c:GR},{k:'País 6',v:60,n:'60',c:GR}])}</div>
+      </div>
+      <div class="viz"><h5>Mix de tipo de socio por país</h5><div class="cap">Participación base vs. temporal · simulado</div>
+        ${stacked([
+          {k:'País 3',v:{b:93,t:7}},{k:'País 2',v:{b:37,t:63}},{k:'País 1',v:{b:13,t:87}},
+          {k:'País 4',v:{b:35,t:65}},{k:'País 5',v:{b:27,t:73}},{k:'País 6',v:{b:7,t:93}},
+        ],['b','t'],[AZ,GR])}
+        ${lg([{k:'Socio base',c:AZ},{k:'Socio temporal',c:GR}])}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">La composición varía de 93% base a 7% base según el país — no es un volumen homogéneo.</div></div>`},
+
+    {t:'Detalle semanal', q:'<b>¿Cómo se comporta el flujo semana a semana?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Flujo semanal de socios enviados</h5><div class="cap">Conteo por semana · simulado</div>
+        ${bars([1,3,1,25,135,570,1,128,157,155,203,177,64,224,647,830,496,408,1012,818,858],
+          ['S1','S2','S3','S4','S5','S6','S7','S8','S9','S10','S11','S12','S13','S14','S15','S16','S17','S18','S19','S20','S21'],AZ,v=>v)}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Envío por tipo de socio</h5><div class="cap">Totales acumulados</div>
+          ${hbars([{k:'Temporal',v:5455,n:'5.455',c:GR},{k:'Base',v:2723,n:'2.723',c:AZ}])}
+          <div style="margin-top:18px;text-align:center">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:1.8rem;color:${AZ}">8.048</div>
+            <div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Socios enviados</div>
+          </div>
+        </div>
+        <div class="viz"><h5>Confirmación del aliado</h5><div class="cap">Total confirmado vs. enviado</div>
+          ${hbars([{k:'Enviados',v:8048,n:'8.048',c:GR},{k:'Confirmados',v:5737,n:'5.737',c:AZ}])}
+          <div style="margin-top:18px;text-align:center">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:1.8rem;color:#C0392B">−2.311</div>
+            <div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Brecha entre enviado y confirmado (29%)</div>
+          </div>
+        </div>
+      </div>`},
+  ];
+
+  // ===== DASHBOARD 7: ciclo de vida y retención =====
+  const PU='#8E44AD', PU2='#B07CC6', PU3='#D6BCE3', OR='#E8A33D', DK='#2C3E50', LG='#C7CDD1';
+  const viewsLife=[
+    {t:'Base de clientes', q:'<b>¿Cómo se compone la base en cada mercado y cuánto factura?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Clientes únicos</div><div class="v" style="color:${PU}">20.659</div></div>
+        <div class="card-kpi"><div class="l">Segmento base</div><div class="v alt">76%</div></div>
+        <div class="card-kpi"><div class="l">Segmento plus</div><div class="v alt">24%</div></div>
+        <div class="card-kpi"><div class="l">Brecha entre mercados</div><div class="v" style="color:${OR}">30x</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Clientes por mercado y segmento</h5><div class="cap">Conteo · simulado</div>
+          ${hbars([{k:'Mercado A · base',v:15455,n:'15.455',c:PU},{k:'Mercado A · plus',v:4541,n:'4.541',c:PU2},{k:'Mercado B · base',v:340,n:'340',c:PU3},{k:'Mercado B · plus',v:325,n:'325',c:PU3}])}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Mercado A concentra el 97% de la base. Pero en el Mercado B el mix está casi 50/50 entre base y plus.</div></div>
+        <div class="viz"><h5>Distribución de clientes únicos</h5><div class="cap">Por segmento</div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            ${donut([{v:76,c:PU},{v:24,c:PU3}])}
+            <div>${lg([{k:'Segmento base · 76%',c:PU},{k:'Segmento plus · 24%',c:PU3}])}</div>
+          </div>
+        </div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Clientes por rango de facturación</h5><div class="cap">Conteo · simulado</div>
+          ${bars([12697,2349,944,780,650],['$5.000+','$2.000–4.999','$1.000–1.999','$500–999','< $500'],PU,v=>v)}</div>
+        <div class="viz"><h5>Facturación por mercado y año</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Mercado A · 2025',v:513,n:'$513 M',c:DK},{k:'Mercado A · 2024',v:17,n:'$17 M',c:LG},{k:'Mercado B · 2025',v:37,n:'$37 M',c:PU2},{k:'Mercado B · 2024',v:1,n:'$1 M',c:LG}])}</div>
+      </div>`},
+
+    {t:'Acumulación por clase', q:'<b>¿Qué clase de tarjeta concentra millas, cuentas y viajeros?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Acumulación de millas por clase</h5><div class="cap">Millones de millas · simulado</div>
+          ${hbars([{k:'Clase 2',v:3940,n:'3,94 M',c:PU},{k:'Clase 1',v:3730,n:'3,73 M',c:PU},{k:'Clase 3',v:1360,n:'1,36 M',c:PU2},{k:'Clase 4',v:20,n:'~0',c:LG}])}</div>
+        <div class="viz"><h5>Cuentas por clase</h5><div class="cap">Conteo</div>
+          ${hbars([{k:'Clase 2',v:7895,n:'7.895',c:PU},{k:'Clase 1',v:5813,n:'5.813',c:PU},{k:'Clase 3',v:2360,n:'2.360',c:PU2},{k:'Clase 4',v:28,n:'28',c:LG},{k:'Clase 5',v:4,n:'4',c:LG}])}</div>
+      </div>
+      <div class="viz"><h5>Viajeros frecuentes por clase</h5><div class="cap">Conteo · simulado</div>
+        ${bars([7896,5813,2361,28,4],['Clase 2','Clase 1','Clase 3','Clase 4','Clase 5'],PU,v=>v)}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Tres clases concentran prácticamente el 100% del programa. Las clases básicas son irrelevantes en volumen — y, como se ve en la vista de permanencia, también en retención.</div></div>`},
+
+    {t:'Antigüedad', q:'<b>¿En qué año del ciclo está concentrada la base — y dónde está el riesgo?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Clientes por años en el programa</h5><div class="cap">Conteo por antigüedad · simulado</div>
+        ${bars([2203,6031,2561,3925,1298,375],['Año 0','Año 1','Año 2','Año 3','Año 4','Año 5'],PU,v=>v)}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">El año 1 concentra el mayor volumen. Es también la ventana donde una acción de retención rinde más — y donde hoy no se está haciendo nada.</div></div>
+      <div class="viz"><h5>Composición de antigüedad por clase</h5><div class="cap">Participación porcentual · simulado</div>
+        ${stacked([
+          {k:'Clase 2',v:{a:13,b:35,c:16,d:26,e:10}},
+          {k:'Clase 1',v:{a:13,b:38,c:16,d:21,e:12}},
+          {k:'Clase 3',v:{a:12,b:34,c:14,d:24,e:16}},
+        ],['a','b','c','d','e'],[LG,PU,PU2,PU3,OR])}
+        ${lg([{k:'Año 0',c:LG},{k:'Año 1',c:PU},{k:'Año 2',c:PU2},{k:'Año 3',c:PU3},{k:'Año 4+',c:OR}])}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">La estructura de antigüedad es casi idéntica entre clases: el problema no es la clase, es el momento del ciclo.</div></div>`},
+
+    {t:'Permanencia', q:'<b>¿Cuánto dura un cliente en el programa según su clase?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Días promedio en el programa por clase de tarjeta</h5><div class="cap">Días · simulado</div>
+        ${bars([432,416,403,33,30],['Clase 3','Clase 1','Clase 2','Clase 4','Clase 5'],PU,v=>v+' d')}</div>
+      <div class="viz"><h5>Lectura del hallazgo</h5><div class="cap">Diagnóstico y acción</div>
+        <div style="font-family:Inter;font-size:.95rem;color:#42566B;line-height:1.65">
+          <p style="margin-bottom:10px"><b style="color:#0F1E2E">La brecha es de más de 10x.</b> Las clases altas permanecen cerca de 420 días en promedio; las básicas, alrededor de 30. No es una diferencia gradual — es una ruptura.</p>
+          <p style="margin-bottom:10px">Eso reorienta la estrategia de retención: <b style="color:#0F1E2E">retener a un cliente de clase básica cuesta lo mismo que a uno de clase alta, pero rinde una fracción</b>. El esfuerzo debe concentrarse en el año 1 de las tres clases principales.</p>
+          <p>La comparación entre los dos mercados confirma que esto no es un efecto de escala: el mercado pequeño, con un mix mucho más premium, muestra el mismo patrón de permanencia.</p>
+        </div></div>`},
+
+    {t:'Listas accionables', q:'<b>¿A quién llama el equipo comercial esta semana?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="card-kpi" style="text-align:left"><div class="l">Próximos aniversarios (30 días)</div><div class="v" style="color:${PU}">1.284</div></div>
+        <div class="card-kpi" style="text-align:left"><div class="l">Cancelaciones del mes</div><div class="v" style="color:#C0392B">312</div></div>
+      </div>
+      <div class="viz" style="margin-bottom:14px"><h5>Lista de aniversarios</h5><div class="cap">Clientes en ventana de renovación · estructura del listado · simulado</div>
+        ${table(['Cliente','Mercado','Clase','Antigüedad','Millas acumuladas','Acción'],[
+          ['CLI-0001','Mercado A','Clase 1','Año 1','48.200','Contacto de renovación'],
+          ['CLI-0002','Mercado A','Clase 2','Año 1','31.500','Contacto de renovación'],
+          ['CLI-0003','Mercado B','Clase 1','Año 3','96.700','Oferta de upgrade'],
+          ['CLI-0004','Mercado A','Clase 3','Año 1','12.100','Contacto de renovación'],
+          ['CLI-0005','Mercado B','Clase 2','Año 2','54.300','Oferta de upgrade'],
+        ])}</div>
+      <div class="viz"><h5>Lista de cancelaciones</h5><div class="cap">Bajas para análisis de causa raíz · simulado</div>
+        ${table(['Cliente','Mercado','Clase','Días en programa','Millas sin redimir','Motivo'],[
+          ['CLI-0101','Mercado A','Clase 4','28','0','Sin uso'],
+          ['CLI-0102','Mercado A','Clase 5','31','0','Sin uso'],
+          ['CLI-0103','Mercado A','Clase 2','385','22.400','Migración a competencia'],
+          ['CLI-0104','Mercado B','Clase 1','410','61.800','Migración a competencia'],
+          ['CLI-0105','Mercado A','Clase 4','25','0','Sin uso'],
+        ])}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Dos perfiles de baja distintos: el que nunca usó el programa (clase básica, ~30 días) y el que sí lo usó y se fue con millas sin redimir (clase alta, ~400 días). Requieren estrategias opuestas.</div></div>`},
+  ];
+
+  // ===== DASHBOARD 8: producto propio (flagship) =====
+  const GD='#C29A1E', GD2='#E0C46A', VR='#8E2A2A', VR2='#B04A44', VD='#5E7A4A', TE='#1E6E7E', NV='#1B2A47', SL='#B9BFC4';
+  const mesesMP=['202601','202602','202603','202604','202605'];
+  const viewsMP=[
+    {t:'Análisis regional', q:'<b>¿Cuánto factura el producto, dónde, y de qué tipo es esa facturación?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Facturación neta</div><div class="v" style="color:${GD}">$248.658</div></div>
+        <div class="card-kpi"><div class="l">Local · 36%</div><div class="v alt">$90.715</div></div>
+        <div class="card-kpi"><div class="l">On-us · 28%</div><div class="v alt">$69.567</div></div>
+        <div class="card-kpi"><div class="l">Internacional · 27%</div><div class="v alt">$67.902</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Facturación por país</h5><div class="cap">Miles de dólares · simulado</div>
+          ${hbars([{k:'País 1',v:176,n:'$176 k',c:VR},{k:'País 2',v:37,n:'$37 k',c:GD2},{k:'País 3',v:28,n:'$28 k',c:GD2},{k:'País 4',v:6,n:'$6 k',c:SL}])}
+          <div style="margin-top:18px;text-align:center">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:1.7rem;color:${GD}">▲ 8,4%</div>
+            <div style="font-family:'IBM Plex Mono';font-size:.66rem;color:#42566B">Crecimiento interanual · ticket promedio $65,2</div>
+          </div>
+        </div>
+        <div class="viz"><h5>Composición regional de la facturación</h5><div class="cap">Local · internacional · on-us</div>
+          <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap">
+            ${donut([{v:36,c:VR},{v:27,c:VD},{v:28,c:GD},{v:9,c:SL}])}
+            <div>${lg([{k:'Local · 36%',c:VR},{k:'Internacional · 27%',c:VD},{k:'On-us · 28%',c:GD},{k:'Otros · 9%',c:SL}])}</div>
+          </div>
+        </div>
+      </div>
+      <div class="viz"><h5>Composición por país</h5><div class="cap">Mix de tipo de transacción · simulado</div>
+        ${stacked([
+          {k:'País 1',v:{l:49,i:35,o:16}},{k:'País 2',v:{l:43,i:35,o:22}},
+          {k:'País 3',v:{l:31,i:39,o:30}},{k:'País 4',v:{l:5,i:49,o:46}},
+        ],['l','i','o'],[VR,VD,GD])}
+        ${lg([{k:'Local',c:VR},{k:'Internacional',c:VD},{k:'On-us',c:GD}])}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">El País 4 factura casi todo fuera del país: mismo producto, comportamiento opuesto.</div></div>`},
+
+    {t:'Tipos de facturación', q:'<b>¿Cómo se reparte la facturación por marca, clase y producto?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Facturación por país</h5><div class="cap">Millones de dólares · simulado</div>
+          ${bars([174,37,28,6],['País 1','País 2','País 3','País 4'],VR,v=>'$'+v+'M')}</div>
+        <div class="viz"><h5>Facturación por marca de red</h5><div class="cap">Millones de dólares</div>
+          ${bars([162,53,30],['Marca A','Marca B','Marca C'],VR,v=>'$'+v+'M')}</div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación por clase de tarjeta</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Clase 1',v:169,n:'$169 M',c:TE},{k:'Clase 2',v:35,n:'$35 M',c:TE},{k:'Clase 3',v:33,n:'$33 M',c:TE},{k:'Clase 4',v:8,n:'$8 M',c:TE}])}</div>
+        <div class="viz"><h5>Facturación por clase de producto</h5><div class="cap">Producto propio</div>
+          <div style="text-align:center;padding:24px 0">
+            <div style="font-family:'Space Grotesk';font-weight:700;font-size:2.2rem;color:${GD}">$244,9 M</div>
+            <div style="font-family:'IBM Plex Mono';font-size:.68rem;color:#42566B;margin-top:6px">100% producto propio · sin co-branding</div>
+          </div>
+        </div>
+      </div>`},
+
+    {t:'Crecimientos', q:'<b>¿Qué tipo de facturación está impulsando el crecimiento?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Facturación mensual</div><div class="v" style="color:${GD}">+8,4%</div></div>
+        <div class="card-kpi"><div class="l">Local</div><div class="v" style="color:#0E7C66">+24,3%</div></div>
+        <div class="card-kpi"><div class="l">Internacional</div><div class="v alt">+2,0%</div></div>
+        <div class="card-kpi"><div class="l">Cuentas activas</div><div class="v alt">184.482</div></div>
+      </div>
+      <div class="viz" style="margin-bottom:14px"><h5>Facturación mensual y variación YoY</h5><div class="cap">Miles de dólares · simulado</div>
+        ${bars([227,202,229,221,229],mesesMP.map(m=>m.slice(4)),GD,v=>'$'+v+'k')}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">YoY: +5,5% · −0,9% · +5,7% · +5,4% · +8,4%</div></div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación local · YoY</h5><div class="cap">Motor del crecimiento</div>
+          ${bars([64,60,69,65,66],mesesMP.map(m=>m.slice(4)),VD,v=>'$'+v+'k')}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#0E7C66;margin-top:10px">+20,7% · +11,3% · +25,3% · +29,2% · +24,3%</div></div>
+        <div class="viz"><h5>Facturación internacional · YoY</h5><div class="cap">Estancada</div>
+          ${bars([67,54,62,64,63],mesesMP.map(m=>m.slice(4)),SL,v=>'$'+v+'k')}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">+6,9% · −0,6% · +6,3% · +1,4% · +2,0%</div>
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:8px">El crecimiento del producto es <b>local</b>. La facturación internacional está plana — ahí está la oportunidad.</div></div>
+      </div>`},
+
+    {t:'Metas', q:'<b>¿Se está cumpliendo la meta por marca y por país?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Meta vs. logrado — Marcas A y C</h5><div class="cap">Millones de dólares · simulado</div>
+        ${goalBars([
+          {k:'País 1',meta:1945,log:819,pct:38},
+          {k:'País 2',meta:217,log:170,pct:36},
+          {k:'País 3',meta:189,log:133,pct:43},
+          {k:'País 4',meta:76,log:29,pct:33},
+        ])}</div>
+      <div class="viz"><h5>Meta vs. logrado — Marca B</h5><div class="cap">Millones de dólares · simulado</div>
+        ${goalBars([
+          {k:'País 1',meta:280,log:88,pct:31},
+          {k:'País 2',meta:218,log:92,pct:42},
+          {k:'País 3',meta:140,log:52,pct:37},
+          {k:'País 4',meta:8,log:3,pct:39},
+        ])}
+        <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Cumplimiento uniforme entre 31% y 43%: el rezago no es de un país ni de una marca, es estructural — la meta se fijó por encima de la capacidad del canal.</div></div>`},
+
+    {t:'Colocación', q:'<b>¿Cuántas cuentas entran, cuántas salen y por qué?</b>',
+     html:()=>`
+      <div class="vgrid c4" style="margin-bottom:14px">
+        <div class="card-kpi"><div class="l">Cuentas activas</div><div class="v" style="color:${GD}">184.592</div></div>
+        <div class="card-kpi"><div class="l">Adicionales</div><div class="v alt">105.890</div></div>
+        <div class="card-kpi"><div class="l">Cancelaciones</div><div class="v" style="color:#C0392B">2.536</div></div>
+        <div class="card-kpi"><div class="l">Marca dominante</div><div class="v alt">Marca A</div></div>
+      </div>
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Cancelaciones por tipo</h5><div class="cap">Voluntarias vs. involuntarias · simulado</div>
+          ${hbars([{k:'Voluntarias',v:1520,n:'1.520 (60%)',c:VR},{k:'Involuntarias',v:1016,n:'1.016 (40%)',c:SL}])}
+          <h5 style="margin-top:18px">Migraciones</h5><div class="cap">Entrantes vs. salientes</div>
+          ${hbars([{k:'Entrantes',v:640,n:'640',c:VD},{k:'Salientes',v:815,n:'815',c:VR}])}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#C0392B;margin-top:10px">Saldo neto de migración: −175 cuentas.</div></div>
+        <div class="viz"><h5>Composición por marca de red</h5><div class="cap">Participación en cancelaciones</div>
+          ${stacked([
+            {k:'Voluntarias',v:{a:30,b:45,c:25}},
+            {k:'Involuntarias',v:{a:30,b:52,c:18}},
+            {k:'Totales',v:{a:30,b:42,c:28}},
+          ],['a','b','c'],[NV,VR,GD])}
+          ${lg([{k:'Marca A',c:NV},{k:'Marca B',c:VR},{k:'Marca C',c:GD}])}</div>
+      </div>
+      <div class="viz"><h5>Cobro judicial</h5><div class="cap">Cuentas en gestión de cobro · simulado</div>
+        ${hbars([{k:'Marca B',v:52,n:'52%',c:VR},{k:'Marca A',v:27,n:'27%',c:NV},{k:'Marca C',v:22,n:'22%',c:GD}])}</div>`},
+
+    {t:'Benchmark', q:'<b>¿Cómo se compara el producto propio contra los programas rivales?</b>',
+     html:()=>`
+      <div class="viz" style="margin-bottom:14px"><h5>Facturación de la línea revolvente por programa</h5><div class="cap">Miles de dólares mensuales · 2023–2026 · simulado</div>
+        ${multiline([
+          {c:GD,d:[135,150,175,195,190,205,215,205,225,240,255,270]},
+          {c:VR,d:[60,65,72,78,80,85,92,88,95,100,108,115]},
+          {c:NV,d:[58,62,68,72,75,78,84,80,88,92,98,104]},
+          {c:SL,d:[32,35,38,42,44,46,50,48,54,56,60,64]},
+        ],['2023','','','2024','','','2025','','','2026','',''])}
+        ${lg([{k:'Producto propio',c:GD},{k:'Programa A',c:VR},{k:'Programa B',c:NV},{k:'Programa C',c:SL}])}</div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Facturación anual por programa</h5><div class="cap">Ciclo jul–jun · miles de dólares · simulado</div>
+          ${table(['Programa','20-21','22-23','24-25','25-26'],[
+            ['Producto propio','$605','$1.501','$2.381','$2.369'],
+            ['Programa A','$555','$743','$920','$1.076'],
+            ['Programa B','$437','$749','$993','$977'],
+            ['Programa C','$180','$342','$625','$662'],
+          ])}</div>
+        <div class="viz"><h5>Crecimiento interanual por programa</h5><div class="cap">Variación % · simulado</div>
+          ${hbars([{k:'Producto propio',v:46.6,n:'46,6%',c:GD},{k:'Programa A',v:21.2,n:'21,2%',c:VR},{k:'Programa B',v:19.2,n:'19,2%',c:NV},{k:'Programa C',v:13.0,n:'13,0%',c:SL}])}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#0E7C66;margin-top:12px">El producto propio crece a más del doble de velocidad que el mejor de sus competidores — y sostiene esa ventaja desde 2020.</div></div>
+      </div>`},
+
+    {t:'Resumen ejecutivo', q:'<b>¿Qué industria, generación y segmento sostienen el producto?</b>',
+     html:()=>`
+      <div class="vgrid c2" style="margin-bottom:14px">
+        <div class="viz"><h5>Top de industrias</h5><div class="cap">Facturación · millones · simulado</div>
+          ${hbars([{k:'Retail',v:145,n:'$145 M',c:VR},{k:'Supermercados',v:116,n:'$116 M',c:VR},{k:'Entretenimiento',v:72,n:'$72 M',c:VR2},{k:'Serv. profesionales',v:68,n:'$68 M',c:GD},{k:'Restaurantes',v:65,n:'$65 M',c:GD},{k:'Vehículos',v:49,n:'$49 M',c:GD2},{k:'Aerolíneas',v:47,n:'$47 M',c:GD2},{k:'Otras',v:280,n:'$280 M',c:SL}])}</div>
+        <div class="viz"><h5>Facturación por generación</h5><div class="cap">Millones de dólares</div>
+          ${hbars([{k:'Gen X',v:466,n:'$466 M',c:NV},{k:'Millennial',v:437,n:'$437 M',c:NV},{k:'Boomers',v:185,n:'$185 M',c:GD2},{k:'Gen Z',v:24,n:'$24 M',c:SL},{k:'Silenciosa',v:13,n:'$13 M',c:SL}])}
+          <div style="font-family:IBM Plex Mono;font-size:.7rem;color:#42566B;margin-top:10px">Gen X y Millennial concentran el 81% de la facturación.</div></div>
+      </div>
+      <div class="vgrid c2">
+        <div class="viz"><h5>Revolvente vs. totalero por segmento</h5><div class="cap">Millones de dólares · simulado</div>
+          ${hbars([{k:'Segmento B · R',v:431,n:'$431 M',c:VD},{k:'Segmento B · T',v:364,n:'$364 M',c:NV},{k:'Segmento A · R',v:62,n:'$62 M',c:VD},{k:'Premium',v:48,n:'$48 M',c:GD},{k:'Pymes',v:41,n:'$41 M',c:GD2}])}</div>
+        <div class="viz"><h5>Ticket promedio por segmento</h5><div class="cap">Dólares</div>
+          ${bars([681,98,92,85,79,62,38],['Corporativo','Pymes','Wealth','B. Privada','Premium','Segm. B','Segm. A'],GD,v=>'$'+v)}</div>
+      </div>`},
+  ];
+
+  mount('dtabs1','dbody1',views,'#9B2C2C');
+  mount('dtabs2','dbody2',viewsAir,'#2563A8');
+  mount('dtabs3','dbody3',viewsTrip,'#12897B');
+  mount('dtabs4','dbody4',viewsMgmt,'#1E7A8C');
+  mount('dtabs5','dbody5',viewsLM,'#B03030');
+  mount('dtabs6','dbody6',viewsVF,'#1F4E9C');
+  mount('dtabs7','dbody7',viewsLife,'#8E44AD');
+  mount('dtabs8','dbody8',viewsMP,'#C29A1E');
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target);} });
+  },{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
