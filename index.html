@@ -216,6 +216,14 @@
     font-family:var(--mono);font-size:.76rem;color:#8a5f06;line-height:1.5;
   }
   .conf::before{content:"◆";color:var(--signal);}
+  .impact{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--ink);
+    border-radius:0 10px 10px 0;padding:15px 20px;margin:22px 0 6px;
+  }
+  .impact .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding-top:2px;font-weight:600;}
+  .impact p{font-size:.92rem;color:var(--ink-soft);margin:0;line-height:1.55;}
+  .impact p b{color:var(--ink);}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:26px;}
   .kpi{background:var(--paper);padding:18px 16px;}
   .kpi .v{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--line-strong);letter-spacing:.06em;}
@@ -360,12 +368,12 @@
       <div class="reveal">
         <p>Analista Senior de Negocios y Datos con más de 10 años conectando <b style="color:#0F1E2E">estrategia, mejora de procesos y analítica avanzada</b> en entornos de banca y fintech a lo largo de LATAM.</p>
         <p>Mi perfil es integral por diseño. Por un lado, la <b style="color:#0F1E2E">mejora de procesos</b>: actualmente curso Lean Six Sigma Green Belt, con foco en optimización operativa, reducción de desperdicio y rediseño de flujos AS-IS / TO-BE. Por otro, el <b style="color:#0F1E2E">análisis de negocio</b>: me estoy certificando en business analysis para formalizar la disciplina de levantamiento de requerimientos, modelado de procesos y traducción entre negocio y tecnología.</p>
-        <p>Sobre esa base se apoya mi expertise técnica en <b style="color:#0F1E2E">análisis de datos</b>: SQL, Power BI, Tableau, Alteryx, R y Python. No son herramientas sueltas — son el instrumental con el que convierto necesidades de negocio complejas en soluciones escalables que mejoran la eficiencia operativa, reducen la exposición al fraude y elevan el desempeño de los productos.</p>
+        <p>Sobre esa base se apoya mi expertise técnica en <b style="color:#0F1E2E">análisis de datos</b>: SQL, Power BI, Tableau, Alteryx, R y Python — a ese mismo flujo de trabajo incorporo herramientas de IA generativa como ChatGPT y Claude para trabajar más rápido y con más criterio, desde documentación hasta análisis exploratorio. No son herramientas sueltas — son el instrumental con el que convierto necesidades de negocio complejas en soluciones escalables que mejoran la eficiencia operativa, reducen la exposición al fraude y elevan el desempeño de los productos.</p>
         <p>Tengo amplia experiencia con redes de pago globales, liderando iniciativas regionales multifuncionales, gobernando el ámbito de datos de un producto propio del banco e influyendo en la toma de decisiones ejecutiva a través de analítica y storytelling. Combino pensamiento estratégico, capacidad analítica y liderazgo en entornos multiculturales y remotos.</p>
       </div>
       <div class="stats reveal">
         <div class="stat"><div class="n"><em>+10</em></div><div class="l">Años de experiencia</div></div>
-        <div class="stat"><div class="n"><em>5+</em></div><div class="l">Países en Centroamérica</div></div>
+        <div class="stat"><div class="n"><em>6</em></div><div class="l">Países en Centroamérica</div></div>
         <div class="stat"><div class="n"><em>18</em></div><div class="l">Certificaciones</div></div>
         <div class="stat"><div class="n">Millones</div><div class="l">De registros analizados/mes</div></div>
         <div class="stat"><div class="n"><em>8</em></div><div class="l">Dashboards en producción</div></div>
@@ -386,11 +394,11 @@
           <div class="xp-role">Data Specialist</div>
           <div class="xp-org">BAC LATAM</div>
           <ul>
-            <li>Enlace estratégico entre los equipos de negocio, analítica y tecnología en más de 5 países de Centroamérica.</li>
+            <li>Enlace estratégico entre los equipos de negocio, analítica y tecnología en los 6 países de Centroamérica.</li>
             <li>Lidero iniciativas regionales de analítica que mejoran la visibilidad del desempeño de productos y operaciones.</li>
             <li>Diseño tableros ejecutivos en Power BI y Tableau para monitorear KPIs y métricas estratégicas en tiempo real.</li>
             <li>Analizo grandes volúmenes de datos transaccionales para identificar oportunidades de crecimiento y reducción de costos.</li>
-            <li>Mejoré la eficiencia de procesos entre 20 % y 25 % mediante automatización y optimización basadas en datos.</li>
+            <li>Mejoro la eficiencia de procesos entre 20 % y 25 % mediante automatización y optimización basadas en datos.</li>
           </ul>
         </div>
       </div>
@@ -469,6 +477,7 @@
           <span class="tag">Visualización de datos</span>
           <span class="tag">Automatización de procesos</span>
           <span class="tag">Calidad de datos</span>
+          <span class="tag key">IA generativa (ChatGPT, Claude)</span>
         </div>
         <h3 style="margin-top:26px">Formación en curso</h3>
         <div class="tags">
@@ -522,6 +531,12 @@
           </div>
         </div>
       </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#9B2C2C">Impacto real</span>
+        <p>Este análisis redirigió las campañas de promociones hacia los clientes que realmente compran en el nicho gamer, y fue la base para diseñar <b>una nueva tarjeta de crédito regional</b> dirigida a este segmento específico.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot"></span>
@@ -571,6 +586,11 @@
         </div>
       </div>
 
+      <div class="impact">
+        <span class="tag" style="color:#2563A8">Impacto real</span>
+        <p>La corrección de estos errores redujo las cuentas afectadas en un <b>70%</b> y las millas en disputa en un <b>64%</b>. El nuevo control, más ágil y mucho menos manual, disminuyó en un <b>20%</b> el tiempo que los equipos de cada país dedicaban a esta tarea.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot" style="background:#2563A8"></span>
@@ -618,8 +638,14 @@
             <div class="page"><span class="dot">—</span><span>Crucé programa de lealtad × clase de tarjeta × industria para detectar qué combinación genera más redención.</span></div>
             <div class="page"><span class="dot">—</span><span>Modelé cohortes generacionales (Z, Millennial, X, Boomer, Silenciosa) sobre una base de más de un millón de clientes.</span></div>
             <div class="page"><span class="dot">—</span><span>Entregué el insumo para segmentar campañas y priorizar alianzas con comercios del vertical turístico.</span></div>
+            <div class="page"><span class="dot">—</span><span>Sumé seguimiento del gasto en la competencia para saber dónde redimen los clientes fuera de la plataforma.</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#12897B">Impacto real</span>
+        <p>Además del perfil interno, el tablero da seguimiento a dónde gastan los clientes en programas de la competencia — inteligencia competitiva que hoy orienta en qué comercios e industrias priorizar las alianzas.</p>
       </div>
 
       <div class="dash">
@@ -672,6 +698,11 @@
         </div>
       </div>
 
+      <div class="impact">
+        <span class="tag" style="color:#1E7A8C">Impacto real</span>
+        <p>Es el informe con el que los países toman la decisión: sus indicadores respaldan la autorización y ejecución de promociones y campañas en tiempo real.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot" style="background:#1E7A8C"></span>
@@ -720,6 +751,11 @@
             <div class="page"><span class="dot">—</span><span>Consolidé metas de colocación, facturación y compra de millas en una sola vista regional para el comité.</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#B03030">Impacto real</span>
+        <p>El equipo comercial trabaja hoy este tablero país por país para averiguar por qué las tarjetas colocadas no se están usando, y diseñar las promociones que generan esa primera compra.</p>
       </div>
 
       <div class="dash">
@@ -820,6 +856,11 @@
         </div>
       </div>
 
+      <div class="impact">
+        <span class="tag" style="color:#8E44AD">Impacto real</span>
+        <p>Los equipos de cada país usan hoy este análisis para verificar por qué esos clientes dejaron de usar la tarjeta, y construir las promociones que crean la necesidad de volver a comprar.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot" style="background:#8E44AD"></span>
@@ -869,6 +910,11 @@
             <div class="page"><span class="dot">—</span><span>Fui el punto único de contacto de datos del producto para negocio, tecnología y dirección.</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#C29A1E">Impacto real</span>
+        <p>Antes de asumir esta responsabilidad, el producto <b>no tenía seguimiento ni control formal</b> — se reportaba en bruto, sin descontar devoluciones ni retiros, lo que sobreestimaba el resultado real. Con el modelo de datos y el gobierno que implementé, el producto pasó a tener una fuente única de verdad y métricas en las que la dirección podía confiar — la base que hizo posible ver, por primera vez, que el producto le estaba ganando terreno a todos sus competidores.</p>
       </div>
 
       <div class="dash">

@@ -216,6 +216,14 @@
     font-family:var(--mono);font-size:.76rem;color:#8a5f06;line-height:1.5;
   }
   .conf::before{content:"◆";color:var(--signal);}
+  .impact{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--card);border:1px solid var(--line);border-left:3px solid var(--ink);
+    border-radius:0 10px 10px 0;padding:15px 20px;margin:22px 0 6px;
+  }
+  .impact .tag{font-family:var(--mono);font-size:.66rem;letter-spacing:.1em;text-transform:uppercase;white-space:nowrap;padding-top:2px;font-weight:600;}
+  .impact p{font-size:.92rem;color:var(--ink-soft);margin:0;line-height:1.55;}
+  .impact p b{color:var(--ink);}
   .kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-bottom:26px;}
   .kpi{background:var(--paper);padding:18px 16px;}
   .kpi .v{font-family:var(--display);font-weight:700;font-size:1.5rem;color:var(--line-strong);letter-spacing:.06em;}
@@ -360,12 +368,12 @@
       <div class="reveal">
         <p>Senior Business &amp; Data Analyst with over 10 years connecting <b style="color:#0F1E2E">strategy, process improvement and advanced analytics</b> across banking and fintech environments in LATAM.</p>
         <p>My profile is integrated by design. On one side, <b style="color:#0F1E2E">process improvement</b>: I am currently pursuing Lean Six Sigma Green Belt, focused on operational optimization, waste reduction and AS-IS / TO-BE workflow redesign. On the other, <b style="color:#0F1E2E">business analysis</b>: I am certifying in business analysis to formalize the discipline of requirements elicitation, process modeling and translation between business and technology.</p>
-        <p>That foundation supports my technical expertise in <b style="color:#0F1E2E">data analytics</b>: SQL, Power BI, Tableau, Alteryx, R and Python. These are not loose tools — they are the instruments I use to turn complex business needs into scalable solutions that improve operational efficiency, reduce fraud exposure and lift product performance.</p>
+        <p>That foundation supports my technical expertise in <b style="color:#0F1E2E">data analytics</b>: SQL, Power BI, Tableau, Alteryx, R and Python — and I bring generative AI tools like ChatGPT and Claude into that same workflow to work faster and sharper, from documentation to exploratory analysis. These are not loose tools — they are the instruments I use to turn complex business needs into scalable solutions that improve operational efficiency, reduce fraud exposure and lift product performance.</p>
         <p>I have extensive experience with global payment networks, leading cross-functional regional initiatives, governing the data domain of a proprietary bank product, and influencing executive decision-making through analytics and storytelling. I combine strategic thinking, analytical capability and leadership in multicultural, remote environments.</p>
       </div>
       <div class="stats reveal">
         <div class="stat"><div class="n"><em>+10</em></div><div class="l">Years of experience</div></div>
-        <div class="stat"><div class="n"><em>5+</em></div><div class="l">Countries in Central America</div></div>
+        <div class="stat"><div class="n"><em>6</em></div><div class="l">Countries in Central America</div></div>
         <div class="stat"><div class="n"><em>18</em></div><div class="l">Certifications</div></div>
         <div class="stat"><div class="n">Millions</div><div class="l">Of records analyzed monthly</div></div>
         <div class="stat"><div class="n"><em>8</em></div><div class="l">Dashboards in production</div></div>
@@ -386,11 +394,11 @@
           <div class="xp-role">Data Specialist</div>
           <div class="xp-org">BAC LATAM</div>
           <ul>
-            <li>Strategic liaison between business, analytics and technology teams across 5+ Central American countries.</li>
+            <li>Strategic liaison between business, analytics and technology teams across all 6 Central American countries.</li>
             <li>Lead regional analytics initiatives that improve visibility into product and operational performance.</li>
             <li>Design executive dashboards in Power BI and Tableau to track KPIs and strategic metrics in real time.</li>
             <li>Analyze large transactional datasets to identify revenue growth and cost reduction opportunities.</li>
-            <li>Improved process efficiency by 20–25% through data-driven automation and optimization.</li>
+            <li>Improve process efficiency by 20–25% through data-driven automation and optimization.</li>
           </ul>
         </div>
       </div>
@@ -469,6 +477,7 @@
           <span class="tag">Data visualization</span>
           <span class="tag">Process automation</span>
           <span class="tag">Data quality</span>
+          <span class="tag key">Generative AI (ChatGPT, Claude)</span>
         </div>
         <h3 style="margin-top:26px">In progress</h3>
         <div class="tags">
@@ -522,6 +531,12 @@
           </div>
         </div>
       </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#9B2C2C">Real impact</span>
+        <p>This analysis redirected promotional campaigns toward customers who actually spend in the gaming niche, and became the basis for designing <b>a new regional credit card</b> targeted at this specific segment.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot"></span>
@@ -571,6 +586,11 @@
         </div>
       </div>
 
+      <div class="impact">
+        <span class="tag" style="color:#2563A8">Real impact</span>
+        <p>Correcting these errors cut affected accounts by <b>70%</b> and disputed miles by <b>64%</b>. The new, leaner control is far less manual and reduced the time country teams spent on this task by <b>20%</b>.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot" style="background:#2563A8"></span>
@@ -618,8 +638,14 @@
             <div class="page"><span class="dot">—</span><span>Cross-tabulated loyalty program × card tier × industry to find which combination drives the most redemption.</span></div>
             <div class="page"><span class="dot">—</span><span>Modeled generational cohorts (Z, Millennial, X, Boomer, Silent) across a base of over one million customers.</span></div>
             <div class="page"><span class="dot">—</span><span>Delivered the input to segment campaigns and prioritize partnerships with merchants in the travel vertical.</span></div>
+            <div class="page"><span class="dot">—</span><span>Added competitor spend tracking to benchmark where customers redeem outside the platform.</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#12897B">Real impact</span>
+        <p>Beyond the internal profile, the dashboard tracks where customers spend with competing programs — competitive intelligence that now guides which merchants and industries to prioritize for partnerships.</p>
       </div>
 
       <div class="dash">
@@ -672,6 +698,11 @@
         </div>
       </div>
 
+      <div class="impact">
+        <span class="tag" style="color:#1E7A8C">Real impact</span>
+        <p>This is the report countries use to make the call: its indicators back the decision to authorize and launch promotions and campaigns in real time.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot" style="background:#1E7A8C"></span>
@@ -720,6 +751,11 @@
             <div class="page"><span class="dot">—</span><span>Consolidated placement, billing and mileage-purchase targets into a single regional view for the committee.</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#B03030">Real impact</span>
+        <p>The commercial team now works this dashboard country by country to find out why placed cards aren't being used, and to design the promotions that drive that first purchase.</p>
       </div>
 
       <div class="dash">
@@ -820,6 +856,11 @@
         </div>
       </div>
 
+      <div class="impact">
+        <span class="tag" style="color:#8E44AD">Real impact</span>
+        <p>Country teams now use this analysis to track down why specific customers have gone inactive, and to build the promotions that create a reason to use the card again.</p>
+      </div>
+
       <div class="dash">
         <div class="dash-bar">
           <span class="dot" style="background:#8E44AD"></span>
@@ -869,6 +910,11 @@
             <div class="page"><span class="dot">—</span><span>Served as the single point of contact for the product's data across business, technology and leadership.</span></div>
           </div>
         </div>
+      </div>
+
+      <div class="impact">
+        <span class="tag" style="color:#C29A1E">Real impact</span>
+        <p>Before I took on this ownership, the product had <b>no formal tracking or control</b> — it was reported gross, without netting out refunds or withdrawals, which overstated the real result. Once I built the data model and put governance in place, the product gained a single source of truth and metrics leadership could actually trust — the foundation that made it possible to see, for the first time, that the product was outgrowing every one of its competitors.</p>
       </div>
 
       <div class="dash">
